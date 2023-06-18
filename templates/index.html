@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container-fluid banner">
+    <div class="ba-title fs-1 fw-bold " id="title-font-sm">
+      Find Your Dream Home.
+    </div>
+      <form action="#" class="search-form">
+        <div class="input-group mb-3 ">
+          <input type="text" class="form-control " 
+              placeholder="Country, City, Postal code " 
+              aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button class="btn btn-outline-light dark-blue-bg" 
+              type="button" id="button-addon2">
+                <i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+      </form>
+    </div>
+      <!-- Banner End -->
+
+  
+   <!-- Listing start-->
+    <div class="listing-card mt-5 pt-5 sec-m">
+      <div class="head-title text-center pb-5">
+        <h1 class="fs-2 fw-bold  dark-blue-color">
+          Featured Listing
+        </h1>
+        <span></span>
+      </div>
+     <div class="listing shadow">
+      <div class="row m-0">
+            
+        <div class="col-12">
+          <div class="more py-3 mb-2 text-end">
+            
+          <button class="btn btn-outline-dark  ">More Listing</button>
+          </div>
+        </div>
+      </div>
+       
+     </div>
+    </div>
+   <!-- listing end -->
+
+
+    <!-- services start-->
+    <div class="services cards pt-5 mt-5 sec-m">
+      <div class="head-title text-center pb-5">
+        <h1 class="fs-2 fw-bold  dark-blue-color">
+          Our Services
+        </h1>
+        <span></span>
+      </div>
+     <div class="service-listing shadow">
+      <div class="row services-box m-0">
+
+      </div>
+       
+     </div>
+        <!-- services end-->
+    </div>
+    <!-- services end -->
+
+
+    <!-- Agent listing start -->   
+     <div class="agent-listing mt-5 pt-5 sec-m">
+      <div class="head-title text-center pb-5">
+        <h1 class="fs-2 fw-bold  dark-blue-color">
+          Our Agents
+        </h1>
+        <span></span>
+      </div>
+     <div class="listing shadow">
+        <div class="row m-0">
+
+        </div>
+        <div class="col-12">
+          <div class="more py-3 mb-2 text-end">
+            
+          <button class="btn btn-outline-dark  ">More Listing</button>
+          </div>
+        </div>
+     </div>
+    </div>
+    <!-- Agent listing end -->
+
+    <!-- Expert advice  start-->
+
+    <div class="Expert-listing mt-5 pt-5 sec-m">
+      <div class="head-title text-center pb-5">
+        <h1 class="fs-2 fw-bold  dark-blue-color">
+         Our Experts
+        </h1>
+
+        <span></span>
+      </div>
+     <div class="listing shadow">
+        <div class="row-m-0">
+
+        </div>
+        <div class="col-12">
+          <div class="more py-3 mb-2 text-end">
+            
+          <button class="btn btn-outline-dark  ">More Listing</button>
+          </div>
+        </div>
+     </div>
+    </div>
+ 
+
+    <!-- Expert advice  end-->
+
+    <!-- Partners  start-->
+
+    <div class="Partners mt-5 pt-5 sec-m">
+      <div class="head-title text-center pb-5">
+        <h1 class="fs-2 fw-bold  dark-blue-color">
+         Our Partners
+        </h1>
+
+        <span></span>
+      </div>
+      <div class="row m-0 shadow mb-5 p-2">
+        
+        <div class="col-lg-2 col-md-4 col-6 mb-2">
+          <div class="container">
+              <img src="{% static 'img/parteners/Group 120.png' %}" width="100%" alt="">
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6 mb-2">
+          <div class="container">
+              <img src="{% static 'img/parteners/Group 120.png' %}" width="100%" alt="">
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6 mb-2">
+          <div class="container">
+              <img src="{% static 'img/parteners/Group 120.png' %}" width="100%" alt="">
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6 mb-2">
+          <div class="container">
+              <img src="{% static 'img/parteners/Group 120.png' %}" width="100%" alt="">
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6 mb-2">
+          <div class="container">
+              <img src="{% static 'img/parteners/Group 120.png' %}" width="100%" alt="">
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6 mb-2">
+          <div class="container">
+              <img src="{% static 'img/parteners/Group 120.png' %}" width="100%" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Partners  end-->
+    
+   
+{% endblock content %}

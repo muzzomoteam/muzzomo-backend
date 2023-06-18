@@ -1,0 +1,196 @@
+{% load static %}
+{% include 'base/header.html' %}
+{% include 'base/nav.html' %}
+{% block content %}
+    <!-- Start Banner-->
+    <div class="head-title text-center py-5 mt-5">
+      <h1 class="fs-2 fw-bold  dark-blue-color">
+        Add listing
+      </h1>
+      <span></span>
+  </div>
+    <!-- End Banner-->
+    <div class="container mt-3 shadow pb-2 mb-5">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link t1  text-secondary" data-bs-toggle="tab" href="#propertyDetail">Property Detail</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tab-click t2 text-secondary" data-bs-toggle="tab" href="#propertyFeature">Property Feature</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary t3 tab-click" data-bs-toggle="tab" href="#media">Media</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary t4 " data-bs-toggle="tab" href="#aminities">Aminities</a>
+          </li>
+        </ul>
+        <!-- Tab panes -->
+        <!-- Start Tab Content-->
+        <div class="tab-content">
+          <!-- Start Tab Property Detail-->
+          <div id="propertyDetail" class="container tab-pane active"><br>
+            <div class="sideLine ">
+                <h4>Property Detail</h4>
+            </div>
+            <div class="row m-0">
+                <div class="col-12">
+                    <span class="d-block text-secondary">Title</span>
+                    <input type="text" class="form-control">
+                    <span class="d-block text-secondary">Description</span>
+                    <textarea class="form-control" id="" cols="30" rows="5"></textarea>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <span class="d-block text-secondary">Type</span>
+                    <input class="form-control" type="text">
+                    <span class="d-block text-secondary">City</span>
+                    <input class="form-control" type="text">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <span class="d-block text-secondary">Status</span>
+                    <input class="form-control" type="text">
+                    <span class="d-block text-secondary">Postal Code</span>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+          </div>
+          <!-- End Tab Property Detail-->
+          <!-- Start Tab Property Feature-->
+          <div id="propertyFeature" class="container tab-pane fade"><br>
+                <div class="sideLine ">
+                <h4>Property Feature</h4>
+            </div>
+            <div class="row m-0">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <span class="d-block text-secondary">Floor</span>
+                    <input class="form-control" type="number">
+                    <span class="d-block text-secondary">Bed</span>
+                    <input class="form-control" type="number">
+                    <span class="d-block text-secondary">Bath</span>
+                    <input class="form-control" type="number">
+                    <span class="d-block text-secondary">Room</span>
+                    <input class="form-control" type="number">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <span class="d-block text-secondary">Area</span>
+                    <input class="form-control" type="text">
+                    <span class="d-block text-secondary">Lotarea</span>
+                    <input class="form-control" type="text">
+                    <span class="d-block text-secondary">Price</span>
+                    <input class="form-control" type="number">
+                    <span class="d-block text-secondary">Grauge</span>
+                    <input class="form-control" type="number">
+                </div>
+            </div>
+          </div>
+          <!-- End Tab Property Feature-->
+          <!-- Start Tab Media-->
+          <div id="media" class="container tab-pane fade"><br>
+            <div class="sideLine ">
+                <h4>Media</h4>
+            </div>
+              <div class="row m-0">
+                <div class="col-12">
+                  <input type="text" class="form-control mt-2" placeholder="Youtube video url">
+                </div>
+                <div class="col-12">
+                  <input type="file" accept="image/*" onchange="previewImage(event)" class="form-control mt-2" ">
+                </div>
+                <div class="col-12 addListingCoverImage mt-2">
+                    <img id="imagePreview" src="/assets/img/products/debby-hudson-FmCSSSGge-0-unsplash.jpg" style="max-height: 60vh;" alt="Apartment Cover Image">
+                   
+                </div>
+                <div class="col-12 mt-2">
+                  <input type="file" class="form-control"  multiple max="4" accept="image/*">
+                </div>
+              </div>
+            </div>
+          <!-- End Tab Media-->
+          <!-- Start Aminities -->
+          <div id="aminities" class="container tab-pane fade"><br>
+            <div class="sideLine ">
+                <h4>Aminities</h4>
+            </div>
+              <div class="row m-0">
+                  <div class="col-lg-4 col-md-4 col-sm-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-7" for="flexCheckDefault">
+                        Air Conditioning
+                    </label>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-7" for="flexCheckDefault">
+                        Balcony
+                    </label>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-7" for="flexCheckDefault">
+                        Yard
+                    </label>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-7" for="flexCheckDefault">
+                        Poll
+                    </label>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-7" for="flexCheckDefault">
+                        Security System
+                    </label>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-7" for="flexCheckDefault">
+                        Parking Space
+                    </label>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-7" for="flexCheckDefault">
+                        Basement
+                    </label>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-7" for="flexCheckDefault">
+                        BBQ Area
+                    </label>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-7" for="flexCheckDefault">
+                        Walk-in-Closet
+                    </label>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <div class="submitSaveButton"><button class="btn btn-primary muzzomoButtons float-end">Submit</button></div>
+                  </div>
+              </div>
+            </div>
+            <!-- End Aminities -->
+        </div>
+        <!-- End Tab Content-->
+
+        
+      <!-- Start Page NavigationBar-->
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-center mt-4">
+            <li class="page-item">
+              <a class="page-link text-black" id = 'next' href="#" tabindex="-1">Prev</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link text-black" id = 'prev' href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+          <!-- End Page NavigationBar-->
+      </div>
+{% endblock content %}
+{% include 'base/contact.html' %}
+{% include 'base/footer.html' %}

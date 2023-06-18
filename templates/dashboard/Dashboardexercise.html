@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="/assets/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/regular.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/brands.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="/assets/CSS/dashboard.css">
+
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light">
+        <button type="button" class="navbar-toggler mb-2 bg-light" data-bs-toggle="collapse" data-bs-target="#mynav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="mynav">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- sidebar -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+                        <a href="" class="navbar-brand text-white mx-auto text-center py-3 d-block mb-4 bottom-border">
+                            Muzzomo
+                        </a>
+                        <div class="bottom-border pb-3">
+                            <img src="/assets/img/team/1.jpg" alt="" style="width: 50px;" class="rounded-circle ms-3">
+                            <a href="#" class="text-white text-decoration-none mx-1">Ali Tareq Farhadi</a>
+                        </div>
+                        <ul class="nav-bar list-unstyled flex-column mt-4">
+                            <li class="nav-item current">
+                                <a href="#" class="nav-link text-white p-3 mb-2">
+                                    <i class="fa fa-home fa-lg ms-3" aria-hidden="true"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item sidebar-link">
+                                <a href="#" class="nav-link text-white p-3 mb-2">
+                                    <i class="fa fa-user fa-lg ms-3" aria-hidden="true"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li class="nav-item sidebar-link">
+                                <a href="#" class="nav-link text-white p-3 mb-2">
+                                    <i class="fa fa-list fa-lg ms-3" aria-hidden="true"></i>
+                                    Listing
+                                </a>
+                            </li>
+                            <li class="nav-item sidebar-link">
+                                <a href="#" class="nav-link text-white p-3 mb-2">
+                                    <i class="fa fa-sign-out fa-lg ms-3" aria-hidden="true"></i>
+                                    Signup
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End of sidebar -->
+                    <!-- topnav -->
+                    <div class="col-xl-10 col-lg-9 col-md-8 py-2 fixed-top bg-dark ms-auto top-navbar">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4 class="text-light">Dashboard</h4>
+                            </div>
+                            <div class="col-md-5">
+                                <form action="" class="my-4 my-md-0">
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-light  search-button">
+                                            <i class="fas fa-search fa-lg" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" class="form-control search-input" placeholder="search...">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-3">
+                                <ul class="navbar-nav flex-row justify-content-between">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="fa fa-comment fa-lg text-primary" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="fa fa-bell fa-lg text-warning" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ms-md-auto">
+                                        <a href="#signoutModal" class="nav-link" data-bs-toggle="modal">
+                                            <i class="fa fa-sign-in-alt fa-lg text-danger" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of topnav -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Navbar -->
+    <!-- logout Modal -->
+        <div class="modal fade" id="signoutModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Do you want to exit?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" data-bs-dismiss="modal">Stay</button>
+                        <button class="btn btn-danger">Exit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- End of logout modal -->
+    <!-- cards -->
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-10 col-lg-9 col-md-8 ms-auto">
+                        <div class="row pt-md-5 mt-mb-2 mb-5">
+                            <div class="col-lg-3 col-md-6 p-2">
+                                <!-- card -->
+                                <div class="card card-common">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="text-secondary">
+                                                <h5>Sale</h5>
+                                                <h5 class="mt-4">$4000</h5>
+                                            </div>
+                                            <i class="fa fa-shopping-cart text-warning fa-3x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-secondary text-start">
+                                        <a href="#" class="text-decoration-none text-secondary">
+                                        <i class="fas fa-sync me-3"></i>
+                                    </a>
+                                            <span>Update</span>
+                                    </div>
+                                </div>
+                                <!-- end of card -->
+                                
+                            </div>
+                            <div class="col-lg-3 col-md-6 p-2">
+                                <!-- card -->
+                                <div class="card card-common">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="text-secondary">
+                                                <h5>Buy</h5>
+                                                <h5 class="mt-4">$2500</h5>
+                                            </div>
+                                            <i class="fa fa-money-bill text-success fa-3x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-secondary text-start">
+                                        <a href="#" class="text-decoration-none text-secondary">
+                                        <i class="fas fa-sync me-3"></i>
+                                    </a>
+                                            <span>Update</span>
+                                    </div>
+                                </div>
+                                <!-- end of card -->
+                                
+                            </div>
+                            <div class="col-lg-3 col-md-6 p-2">
+                                <!-- card -->
+                                <div class="card card-common">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="text-secondary">
+                                                <h5>Customer</h5>
+                                                <h5 class="mt-4">100</h5>
+                                            </div>
+                                            <i class="fa fa-users text-primary fa-3x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-secondary text-start">
+                                        <a href="#" class="text-decoration-none text-secondary">
+                                        <i class="fas fa-sync me-3"></i>
+                                    </a>
+                                            <span>Update</span>
+                                    </div>
+                                </div>
+                                <!-- end of card -->
+                                
+                            </div>
+                            <div class="col-lg-3 col-md-6 p-2">
+                                <!-- card -->
+                                <div class="card card-common">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="text-secondary">
+                                                <h5>View</h5>
+                                                <h5 class="mt-4">200</h5>
+                                            </div>
+                                            <i class="fa fa-chart-line text-warning fa-3x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-secondary text-start">
+                                        <a href="#" class="text-decoration-none text-secondary">
+                                        <i class="fas fa-sync me-3"></i>
+                                    </a>
+                                            <span>Update</span>
+                                    </div>
+                                </div>
+                                <!-- end of card -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- end of cards -->
+    <!-- progress / tasklist -->
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-10 col-lg-9 col-md-8 ms-auto">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="text-white bg-dark p-4 rounded">
+                                    <h4 class="mb-4">Our Project</h4>
+                                    <h6 class="mt-4 mb-2">Online Library</h6>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar progress-bar-striped fw-bold bg-success" style="width: 85%;">85%</div>
+                                    </div>
+                                    <h6 class="mt-4 mb-2">Global services</h6>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar progress-bar-striped fw-bold bg-primary" style="width: 50%;">50%</div>
+                                    </div>
+                                    <h6 class="mt-4 mb-2">Web services</h6>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar progress-bar-striped fw-bold bg-secondary" style="width: 20%;">20%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 bg-light rounded mt-5 mt-lg-0">
+                                <h4 class="p-3 mb-3 text-muted">Tasks</h4>
+                                <div class="container-fluid bg-light">
+                                    <div class="row py-3 mb-4 align-content-center task-border">
+                                        <div class="col-1">
+                                            <input type="checkbox" checked>
+                                        </div>
+                                        <div class="col-9">Desing database</div>
+                                        <div class="col-1">
+                                            <a href="" data-bs-toggle="tooltip" data-bs-html="true" databs-placement="top" title="<h6>edit</h6>">
+                                                <i class="fas fa-edit fa-lg text-success ms-2"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="" data-bs-toggle="tooltip" data-bs-html="true" databs-placement="top" title="<h6>Delete</h6>">
+                                                <i class="fas fa-trash fa-lg text-danger ms-2"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid bg-light">
+                                    <div class="row py-3 mb-4 align-content-center task-border">
+                                        <div class="col-1">
+                                            <input type="checkbox" checked>
+                                        </div>
+                                        <div class="col-9">Prepare frontend site</div>
+                                        <div class="col-1">
+                                            <a href="" data-bs-toggle="tooltip" data-bs-html="true" databs-placement="top" title="<h6>edit</h6>">
+                                                <i class="fas fa-edit fa-lg text-success ms-2"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="" data-bs-toggle="tooltip" data-bs-html="true" databs-placement="top" title="<h6>Delete</h6>">
+                                                <i class="fas fa-trash fa-lg text-danger ms-2"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid bg-light">
+                                    <div class="row py-3 mb-4 align-content-center task-border">
+                                        <div class="col-1">
+                                            <input type="checkbox" checked>
+                                        </div>
+                                        <div class="col-9">Prepate backend site</div>
+                                        <div class="col-1">
+                                            <a href="" data-bs-toggle="tooltip" data-bs-html="true" databs-placement="top" title="<h6>edit</h6>">
+                                                <i class="fas fa-edit fa-lg text-success ms-2"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="" data-bs-toggle="tooltip" data-bs-html="true" databs-placement="top" title="<h6>Delete</h6>">
+                                                <i class="fas fa-trash fa-lg text-danger ms-2"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- end of progress / tasklist -->
+    <!-- table -->
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-xl-10 col-lg-9 col-md-8 ms-auto">
+                    <div class="row">
+                        <div class="col-lg-6 mb-5 mb-lg-0 mt-5 mt-lg-0">
+                            <h3 class="text-muted text-center mb-3">Payments</h3>
+                                <table class="table fs-6 table-hover table-dark text-center">
+                                    <thead>
+                                        <tr>
+                                            <td>#</td><td>Name</td><td>Price</td><td>Date</td>
+                                            <td>Status</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td><td>Ali</td><td>4500</td><td>May 22</td>
+                                            <td>
+                                               <span class="badge w-75 fs-6 py-2 bg-success">Accept</span> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td><td>Ali</td><td>4500</td><td>May 22</td>
+                                            <td>
+                                                <span class="badge w-75 fs-6 py-2 bg-warning">Waiting</span> 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td><td>Ali</td><td>4500</td><td>May 22</td>
+                                            <td>
+                                                <span class="badge w-75 fs-6 py-2 bg-danger">Deny</span> 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td><td>Ali</td><td>4500</td><td>May 22</td>
+                                            <td>
+                                                <span class="badge w-75 fs-6 py-2 bg-warning">Waiting</span> 
+                                             </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- pagination -->
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">&laquo;</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3 active">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">4</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">5</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">&raquo;</a>
+                                        </li>
+                                    </ul>
+                                <!-- end of pagination -->
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="text-muted text-center mb-3">Payments</h3>
+                                <table class="table fs-6 table-striped bg-light text-center">
+                                    <thead>
+                                        <tr>
+                                            <td>#</td><td>Name</td><td>Price</td><td>Opration</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ali</td>
+                                            <td>4500</td>
+                                            <td><button class="btn btn-info btn-sm text-white">Answer</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ali</td>
+                                            <td>4500</td>
+                                            <td><button class="btn btn-info btn-sm text-white">Answer</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ali</td>
+                                            <td>4500</td>
+                                            <td><button class="btn btn-info btn-sm text-white">Answer</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ali</td>
+                                            <td>4500</td>
+                                            <td><button class="btn btn-info btn-sm text-white">Answer</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- pagination -->
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">&laquo;</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3 active">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">4</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">5</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link py-2 px-3">&raquo;</a>
+                                        </li>
+                                    </ul>
+                                <!-- end of pagination -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- end of table -->
+    <!-- activiteis / quickpost -->
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-10 col-lg-9 col-md-8 ms-auto">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <h4 class="mb-4 text-muted">Recently activiteis</h4>
+                                <!-- activities card -->
+                                <div id="myaccordion">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button class="btn btn-block btn-light text-start" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                                <img src="/assets/img/team/1.jpg" alt="" class="me-1 rounded" style="width:50px ;height: 50px;">
+                                                Karim recently added a conversation
+                                            </button>
+                                        </div>
+                                        <div class="collapse" data-bs-parent="#myaccordion" id="collapse1">
+                                            <div class="card-body p-2">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi porro velit molestias reprehenderit dolores accusantium!
+                                            </div>
+                                            <div class="card-footer ps-3 text-muted">
+                                                23 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button class="btn btn-block btn-light text-start" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                                <img src="/assets/img/team/2.jpg" alt="" class="me-1 rounded" style="width:50px ;height: 50px;">
+                                                Ali recently added a conversation
+                                            </button>
+                                        </div>
+                                        <div class="collapse" data-bs-parent="#myaccordion" id="collapse2">
+                                            <div class="card-body p-2">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi porro velit molestias reprehenderit dolores accusantium!
+                                            </div>
+                                            <div class="card-footer ps-3 text-muted">
+                                                23 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button class="btn btn-block btn-light text-start" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                                <img src="/assets/img/team/3.jpg" alt="" class="me-1 rounded" style="width:50px ;height: 50px;">
+                                                Hassan recently added a conversation
+                                            </button>
+                                        </div>
+                                        <div class="collapse" data-bs-parent="#myaccordion" id="collapse3">
+                                            <div class="card-body p-2">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi porro velit molestias reprehenderit dolores accusantium!
+                                            </div>
+                                            <div class="card-footer ps-3 text-muted">
+                                                23 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button class="btn btn-block btn-light text-start" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                                <img src="/assets/img/team/4.jpg" alt="" class="me-1 rounded" style="width:50px ;height: 50px;">
+                                                Ahmad recently added a conversation
+                                            </button>
+                                        </div>
+                                        <div class="collapse" data-bs-parent="#myaccordion" id="collapse4">
+                                            <div class="card-body p-2">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi porro velit molestias reprehenderit dolores accusantium!
+                                            </div>
+                                            <div class="card-footer ps-3 text-muted">
+                                                23 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button class="btn btn-block btn-light text-start" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                                <img src="/assets/img/team/5.jpg" alt="" class="me-1 rounded" style="width:50px ;height: 50px;">
+                                                Mohammad recently added a conversation
+                                            </button>
+                                        </div>
+                                        <div class="collapse" data-bs-parent="#myaccordion" id="collapse5">
+                                            <div class="card-body p-2">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi porro velit molestias reprehenderit dolores accusantium!
+                                            </div>
+                                            <div class="card-footer ps-3 text-muted">
+                                                23 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of activities card -->
+                            </div>
+                            <div class="col-lg-5 mt-5">
+                                <div class="card rounded">
+                                    <div class="card-body">
+                                        <h5 class="text-muted text-center mb-4">New Post</h5>
+                                        <ul class="list-inline text-center py-3">
+                                            <li class="list-inline-item">
+                                                <a href="" class="text-decoration-none">
+                                                    <i class="fa fa-pencil text-success" aria-hidden="true"></i>
+                                                    <span class="text-muted">Status</span>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item px-2">
+                                                <a href="" class="text-decoration-none">
+                                                    <i class="fas fa-camera text-info" aria-hidden="true"></i>
+                                                    <span class="text-muted">Picture</span>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="" class="text-decoration-none">
+                                                    <i class="fas fa-location-dot text-danger" aria-hidden="true"></i>
+                                                    <span class="text-muted">Location</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <form action="">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control py-2 mb-2" placeholder="write something...">
+                                                <button class="btn w-100 btn-info text-light py-2 mb-5">Send</button>
+                                            </div>
+                                        </form>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="card">
+                                                    <i class="fa fa-calendar fa-4x text-warning d-block py-3 m-auto" aria-hidden="true"></i>
+                                                    <div class="card-body">
+                                                        <p class="card-text text-center">Tursday May, 22</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="card">
+                                                    <i class="fa fa-clock fa-4x text-info d-block py-3 m-auto" aria-hidden="true"></i>
+                                                    <div class="card-body">
+                                                        <p class="card-text text-center">9:30 PM</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- footer -->
+        <footer>
+            <div class="container-fluid bg-light p-5 mt-5">
+                <div class="row">
+                    <div class="col-xl-10 col-lg-9 col-md-8 ms-auto">
+                        <div class="row">
+                            <div class="col-lg-6 text-center">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item me-4">
+                                        <a href="#" class="text-dark text-decoration-none">About Us</a>
+                                    </li>
+                                    <li class="list-inline-item me-4">
+                                        <a href="#" class="text-dark text-decoration-none">Support</a>
+                                    </li>
+                                    <li class="list-inline-item me-4">
+                                        <a href="#" class="text-dark text-decoration-none">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 text-center">
+                                <span class="text-muted">Design by <i class="fa fa-heart text-danger" aria-hidden="true"></i> Global</span> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    <!-- end of footer -->
+    <!-- end of activiteis / quickpost -->
+    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+    </script>
+</body>
+</html>

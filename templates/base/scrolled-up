@@ -1,0 +1,7 @@
+
+<a href="#up-section">
+        <div class="up fixed-bottom d-flex align-items-center bg-dark bg-opacity-75 shadow-lg text-center">
+          <i class="fa fa-arrow-up w-100 fs-5 fw-bold text-light" aria-hidden="true"></i>
+        </div>
+    </a>
+    <div id="up-section"></div>

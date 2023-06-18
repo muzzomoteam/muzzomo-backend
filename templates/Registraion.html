@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Start Registration Section-->
+<div class="w-100 register-bg m-0 py-5 h-100">
+
+    <div class="registraionSection shadow text-shadow">
+        <div class="head-title text-center pb-5">
+            <h1 class="fs-2 fw-bold text-light">
+                Registeration
+            </h1>
+            <span></span>
+        </div>
+        <form action="">
+            <div class="row m-0">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+
+                    <span class="text-light"><i class="fa fa-user px-1" aria-hidden="true"></i>Full Name</span>
+                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <span class="text-light"><i class="fa fa-envelope px-1" aria-hidden="true"></i> Email</span>
+                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <span class="text-light"><i class="fa fa-phone px-1" aria-hidden="true"></i> Phone</span>
+                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <span class="text-light"> <i class="fa fa-lock px-1" aria-hidden="true"></i> Password</span>
+                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
+                        Password</span>
+                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <span class="text-light"><i class="fa fa-user px-1" aria-hidden="true"></i> User</span>
+
+                    <select id="select-user" class="form-select form-select-lg form-control mb-3 mb-3 mt-2 fs-6"
+                        aria-label=".form-select-lg example" onchange="usertyp()">
+                        <option selected class="sel-1">User</option>
+                        <option class="sel-2" value="2">Professional</option>
+                    </select>
+
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 d-re-prof">
+                    <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
+                        Password</span>
+                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
+                        Password</span>
+                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 d-re-prof">
+                    <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
+                        Password</span>
+                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
+                        Password</span>
+                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                </div>
+            </div>
+
+            <div class="row m-5">
+                <div class="col-12 text-center ">
+                    <button class="btn btn-outline-info text-light w-25 mt-2 light-blue-bg">Register</button>
+                    <a href="loginPage.html" class="d-block text-decoration-none text-light mt-2"><span
+                            class="loginSpan">Login</span></a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- End Registration Section-->
+{% endblock content %}
