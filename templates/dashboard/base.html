@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="{% static '/img/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static '/Bootstrap/css/bootstrap.min.css' %}">
+    <script src="https://kit.fontawesome.com/72f6db3b53.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static '/CSS/dashboard.css'%}">
+    <link rel="stylesheet" href="{% static '/CSS/csstest.css' %}">
+</head>
+<body>
+    <a href="#up-section">
+        <div class="up fixed-bottom d-flex align-items-center bg-dark bg-opacity-75 shadow-lg text-center">
+            <i class="fa fa-arrow-up w-100 fs-5 fw-bold text-light" aria-hidden="true"></i>
+        </div>
+    </a>
+    <div id="up-section"></div>
+    <div id="wrapper">
+        <aside id="sidebar-wrapper">
+            <div class="sidebar-brand">
+                <h2>Muzzomo</h2>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="active">
+                    <a href="{% url 'dashboard' %}"><i class="fa fa-home"></i>Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'dashboardPropertyListing' %}"><i class="fa fa-list"></i>Listing</a>
+                </li>
+                <li>
+                    <a href="{% url 'dashboardAddListing' %}"><i class="fa fa-address-book"></i>Add Listing</a>
+                </li>
+                <li>
+                    <a href="{% url 'dashboardWishlist' %}"><i class="fa fa-heart"></i>Wishlist</a>
+                </li>
+                <li>
+                    <a href="{% url 'dashboardProfile' %}"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
+                </li>
+                <li>
+                    <a href="{% url 'dashboardMessage' %}"><i class="fa fa-message" aria-hidden="true"></i>Message</a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Signout</a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="navbar-wrapper">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        {% block content %}
+        {% endblock content %}
+       </div> 
+    <script>
+        const $button = document.querySelector('#sidebar-toggle');
+        const $wrapper = document.querySelector('#wrapper');
+        $button.addEventListener('click', (e) => {
+            e.preventDefault();
+            $wrapper.classList.toggle('toggled');
+        });
+    </script>
+    <script src="{% static '/Bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

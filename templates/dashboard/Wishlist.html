@@ -1,63 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="/assets/Bootstrap/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/72f6db3b53.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/assets/CSS/dashboard.css">
-    <link rel="stylesheet" href="/assets/CSS/csstest.css">
-    
-</head>
-<body>
-    <a href="#up-section">
-        <div class="up fixed-bottom d-flex align-items-center bg-dark bg-opacity-75 shadow-lg text-center">
-          <i class="fa fa-arrow-up w-100 fs-5 fw-bold text-light" aria-hidden="true"></i>
-        </div>
-      </a>
-      <div id="up-section"></div>
-    <div id="wrapper">
-        <aside id="sidebar-wrapper">
-          <div class="sidebar-brand">
-            <h2>Muzzomo</h2>
-          </div>
-          <ul class="sidebar-nav">
-            <li class="">
-              <a href="Dashboard.html"><i class="fa fa-home"></i>Home</a>
-            </li>
-            <li>
-              <a href="PropertyListing.html"><i class="fa fa-list"></i>Listing</a>
-            </li>
-            <li>
-              <a href="AddListing.html"><i class="fa fa-address-book"></i>Add Listing</a>
-            </li>
-            <li class="active">
-                <a href="Wishlist.html"><i class="fa fa-heart"></i>Wishlist</a>
-              </li>
-              <li>
-                <a href="profile.html"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
-              </li>
-              <li>
-                <a href="message.html"><i class="fa fa-message" aria-hidden="true"></i>Message</a>
-              </li>
-              <li>
-                <a href="../index.html"><i class="fa fa-sign-out" aria-hidden="true"></i>Signout</a>
-              </li>
-          </ul>
-        </aside>
-      
-        <div id="navbar-wrapper">
-          <nav class="navbar navbar-inverse" >
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
-              </div>
-            </div>
-          </nav>
-        </div>
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
         <section id="content-wrapper">
     <div class="head-title text-center py-5 mt-5 border-bottom">
         <h1 class="fs-2 fw-bold  dark-blue-color">
@@ -258,7 +201,5 @@
        
     </div>
 </section>
-    </div>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+{% include './base/footer.html' %}
+{% endblock content %}

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+{% include 'base/nav.html' %}
 <!-- Start Registration Section-->
 <div class="w-100 register-bg m-0 py-5 h-100">
 
@@ -59,7 +61,7 @@
             <div class="row m-5">
                 <div class="col-12 text-center ">
                     <button class="btn btn-outline-info text-light w-25 mt-2 light-blue-bg">Register</button>
-                    <a href="loginPage.html" class="d-block text-decoration-none text-light mt-2"><span
+                    <a href="{% url 'login' %}" class="d-block text-decoration-none text-light mt-2"><span
                             class="loginSpan">Login</span></a>
                 </div>
             </div>

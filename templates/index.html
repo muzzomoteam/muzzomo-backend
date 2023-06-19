@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
+{% include 'base/nav.html' %}
+{% include 'base/scrolled-up.html' %}
 
     <div class="container-fluid banner">
     <div class="ba-title fs-1 fw-bold " id="title-font-sm">
@@ -160,5 +163,5 @@
 
     <!-- Partners  end-->
     
-   
+    {% include 'base/contact.html' %}
 {% endblock content %}

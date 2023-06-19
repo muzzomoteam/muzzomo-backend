@@ -1,6 +1,9 @@
 
-{% extends 'base.html' %}    
+{% extends 'base.html' %}
+{% load static %}
 {% block content %}
+{% include 'base/nav.html' %}
+{% include 'base/scrolled-up.html' %}
 <div class="body m-0">
         <div class="head-title text-center py-5 mt-5">
             <h1 class="fs-2 fw-bold  dark-blue-color">
@@ -649,4 +652,5 @@
                 </div>
             </div>
  </div>
-{% endblock content %}
+ {% include 'base/contact.html' %}
+ {% endblock content %}

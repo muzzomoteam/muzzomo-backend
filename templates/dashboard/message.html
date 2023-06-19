@@ -1,63 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/assets/Bootstrap/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/72f6db3b53.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/assets/CSS/dashboard.css">
-</head>
-<body>
-    <a href="#up-section">
-        <div class="up fixed-bottom d-flex align-items-center bg-dark bg-opacity-75 shadow-lg text-center">
-          <i class="fa fa-arrow-up w-100 fs-5 fw-bold text-light" aria-hidden="true"></i>
-        </div>
-      </a>
-      <div id="up-section"></div>
-    <div id="wrapper">
-        <aside id="sidebar-wrapper">
-          <div class="sidebar-brand">
-            <h2>Muzzomo</h2>
-          </div>
-          <ul class="sidebar-nav">
-            <li class="">
-              <a href="Dashboard.html"><i class="fa fa-home"></i>Home</a>
-            </li>
-            <li>
-              <a href="PropertyListing.html"><i class="fa fa-list"></i>Listing</a>
-            </li>
-            <li>
-              <a href="AddListing.html"><i class="fa fa-address-book"></i>Add Listing</a>
-            </li>
-            <li>
-                <a href="Wishlist.html"><i class="fa fa-heart"></i>Wishlist</a>
-              </li>
-              <li>
-                <a href="profile.html"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
-              </li>
-              <li class="active">
-                <a href="message.html"><i class="fa fa-message" aria-hidden="true"></i>Message</a>
-              </li>
-              <li>
-                <a href="../index.html"><i class="fa fa-sign-out" aria-hidden="true"></i>Signout</a>
-              </li>
-          </ul>
-        </aside>
-      
-        <div id="navbar-wrapper">
-          <nav class="navbar navbar-inverse" >
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
-              </div>
-            </div>
-          </nav>
-        </div>
-        <!-- Start Main Content -->
-        <section id="content-wrapper">
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+<section id="content-wrapper">
     <div class="container">
         <div class="header-section w-100 text-center border-bottom">
             <h2 class="p-5">Message Inbox</h2>
@@ -65,95 +9,104 @@
         <div class="message-section">
             <div class="row">
                 <div class="col-2">
-                        <div class="message-sender-name my-2 p-3 border-bottom fs-8">
-                            Karim
-                        </div>
-                        <div class="message-sender-name my-2 p-3 border-bottom fs-8">
-                            Karim
-                        </div>
-                        <div class="message-sender-name my-2 p-3 border-bottom fs-8">
-                            Karim
-                        </div>
-                        <div class="message-sender-name my-2 p-3 border-bottom fs-8">
-                            Karim
-                        </div>
-                        <div class="message-sender-name my-2 p-3 border-bottom fs-8">
-                            Karim
-                        </div>
-                        <div class="message-sender-name my-2 p-3 border-bottom fs-8">
-                            Karim
-                        </div>
-                        <div class="message-sender-name my-2 p-3 border-bottom fs-8">
-                            Karim
-                        </div>
-                        <div class="message-sender-name my-2 p-3 border-bottom fs-8">
-                            Karim
-                        </div>
-                        <div class="message-sender-name my-2 p-3 border-bottom fs-8">
-                            Karim
-                        </div>
+                    <div class="message-sender-name my-2 p-3 border-bottom fs-8">
+                        Karim
+                    </div>
+                    <div class="message-sender-name my-2 p-3 border-bottom fs-8">
+                        Karim
+                    </div>
+                    <div class="message-sender-name my-2 p-3 border-bottom fs-8">
+                        Karim
+                    </div>
+                    <div class="message-sender-name my-2 p-3 border-bottom fs-8">
+                        Karim
+                    </div>
+                    <div class="message-sender-name my-2 p-3 border-bottom fs-8">
+                        Karim
+                    </div>
+                    <div class="message-sender-name my-2 p-3 border-bottom fs-8">
+                        Karim
+                    </div>
+                    <div class="message-sender-name my-2 p-3 border-bottom fs-8">
+                        Karim
+                    </div>
+                    <div class="message-sender-name my-2 p-3 border-bottom fs-8">
+                        Karim
+                    </div>
+                    <div class="message-sender-name my-2 p-3 border-bottom fs-8">
+                        Karim
+                    </div>
                 </div>
                 <div class="col-7">
                     <div class="message-view my-2 p-3 border-bottom text-center fs-8">
                         <a href="#" class="text-decoration-none text-dark">
                             Lorem ipsum dolor sit amet...
-                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 see more</a>
                         </a>
                     </div>
                     <div class="message-view my-2 p-3 border-bottom text-center fs-8">
                         <a href="#" class="text-decoration-none text-dark">
                             Lorem ipsum dolor sit amet...
-                            <a href="" class="text-decoration-none px-2 fs-8 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a href="" class="text-decoration-none px-2 fs-8 text-secondary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 see more</a>
                         </a>
                     </div>
                     <div class="message-view my-2 p-3 border-bottom text-center fs-8">
                         <a href="#" class="text-decoration-none text-dark">
                             Lorem ipsum dolor sit amet...
-                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 see more</a>
                         </a>
                     </div>
                     <div class="message-view my-2 p-3 border-bottom text-center fs-8">
                         <a href="#" class="text-decoration-none text-dark">
                             Lorem ipsum dolor sit amet...
-                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 see more</a>
                         </a>
                     </div>
                     <div class="message-view my-2 p-3 border-bottom text-center fs-8">
                         <a href="#" class="text-decoration-none text-dark">
                             Lorem ipsum dolor sit amet...
-                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 see more</a>
                         </a>
                     </div>
                     <div class="message-view my-2 p-3 border-bottom text-center fs-8">
                         <a href="#" class="text-decoration-none text-dark">
                             Lorem ipsum dolor sit amet...
-                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 see more</a>
                         </a>
                     </div>
                     <div class="message-view my-2 p-3 border-bottom text-center fs-8">
                         <a href="#" class="text-decoration-none text-dark">
                             Lorem ipsum dolor sit amet...
-                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 see more</a>
                         </a>
                     </div>
                     <div class="message-view my-2 p-3 border-bottom text-center fs-8">
                         <a href="#" class="text-decoration-none text-dark">
                             Lorem ipsum dolor sit amet...
-                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 see more</a>
                         </a>
                     </div>
                     <div class="message-view my-2 p-3 border-bottom text-center fs-8">
                         <a href="#" class="text-decoration-none text-dark">
                             Lorem ipsum dolor sit amet...
-                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a href="" class="text-decoration-none px-2 text-secondary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 see more</a>
                         </a>
                     </div>
@@ -191,30 +144,31 @@
         </div>
         <div class="modal-sections">
             <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Karim</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                Lorem ipsum dolor sit, 
-                                amet consectetur adipisicing elit. 
-                                Laboriosam sunt ex omnis Karimquid Karimas 
-                                deserunt dolores reiciendis vero quo error!
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary muzzomo-button border-0" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary muzzomo-button border-0">Delete Message</button>
-                             </div>
-                         </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Karim</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Lorem ipsum dolor sit,
+                            amet consectetur adipisicing elit.
+                            Laboriosam sunt ex omnis Karimquid Karimas
+                            deserunt dolores reiciendis vero quo error!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary muzzomo-button border-0"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary muzzomo-button border-0">Delete
+                                Message</button>
+                        </div>
                     </div>
-                </div>    
+                </div>
+            </div>
         </div>
     </div>
-    </section>
-    </div>
-    <script src="/assets/Bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</section>
+{% include './base/footer.html' %}
+{% endblock content %}

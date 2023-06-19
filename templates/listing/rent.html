@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+{% include 'base/nav.html' %}
+{% include 'base/scrolled-up.html' %}
     <!-- Start Banner-->
     <div class="head-title text-center py-5 " id="up-section">
         <h1 class="fs-2 fw-bold  dark-blue-color">
@@ -21,4 +24,5 @@
         </div>
     </div>
     <!-- End PropertyList Body-->
+    {% include 'base/contact.html' %}
     {% endblock content %}

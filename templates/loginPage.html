@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
- 
-{% block content %}
-    <!-- Start Login Section-->
 
+{% block content %}
+{% include 'base/nav.html' %}
+    <!-- Start Login Section-->
    <div class="w-100 login-bg h-100">
     <div class="loginSection shadow py-5">
         <div class="head-title text-center ">
@@ -13,7 +13,6 @@
             <h1 class="fs-2 fw-bold mt-4 text-light">
              Login
             </h1>
-            
         </div>
         <form action="" class="">
         <div class="row m-0">
@@ -28,7 +27,7 @@
         <!-- End Login Section-->
         <div class="row m-0">
             <div class="col-12 text-center align-content-center mt-3">
-                <button class="btn btn-outline-info text-light w-25 mt-2 light-blue-bg" type="submit"><a href="/dashboard/Dashboard.html" class="nav-link">Login</a></button>
+                <button class="btn btn-outline-info text-light w-25 mt-2 light-blue-bg" type="submit"><a href="{% url 'dashboard' %}" class="nav-link">Login</a></button>
                 <a href="{% url 'register' %}" class="text-decoration-none text-light d-block mt-2 fs-7">I dont have acount?</span></a>
                 <a href="" class="text-decoration-none text-light fs-7">Forget password</span></a>
             </div>
