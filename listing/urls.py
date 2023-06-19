@@ -1,5 +1,8 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import *
+
 urlpatterns =[
     path('',home , name='home'),
     path('base-view/' , base_view , name='base'),
@@ -19,4 +22,5 @@ urlpatterns =[
     path('dashboard-propertyListing-view/' , dashboard_propertyListing_view , name='dashboardPropertyListing'),
     path('dashboard-wishlist-view/' , dashboard_wishlist_view , name='dashboardWishlist'),
     path('dashboard-addListing-view' , dashboard_addListing_view , name='dashboardAddListing'),
-]
+    path('product-detail-view/<int:product_pk>' , productDetail , name='productDetailselect'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

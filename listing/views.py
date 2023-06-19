@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,get_object_or_404
+from .models import *
 # Create your views here.
 
 def base_view(request):
@@ -53,3 +53,21 @@ def dashboard_wishlist_view (request):
 
 def dashboard_addListing_view (request):
     return render(request, 'dashboard/AddListing.html')
+
+
+def productDetail (request , product_pk):
+    productDetail = get_object_or_404(Product , pk = product_pk)
+    productfeature = ''
+    if productDetail.status == True:
+        productfeature = 'For Rent'
+    else :
+        productfeature = 'For Sale'
+    amenities = AmenitiesAddListing.objects.filter(product = product_pk)
+    context = {
+        "productDetail": productDetail,
+        "productfeature" : productfeature,
+        'amenites': amenities
+        
+    }
+
+    return render(request,'Productdetial.html', context)

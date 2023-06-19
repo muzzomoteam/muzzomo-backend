@@ -17,7 +17,7 @@
                     <input type="radio" name="radio-btn" id="img-1" checked />
                     <li class="slide-container">
                     <div class="slide">
-                      <img src="/assets/img/products/aubrey-odom-ITzfgP77DTg-unsplash.jpg" />
+                      <img src="{{productDetail.feature.coverimage.url}}" />
                         </div>
                     <div class="nav">
                       <label for="img-6" class="prev">&#x2039;</label>
@@ -28,7 +28,7 @@
                     <input type="radio" name="radio-btn" id="img-2" />
                     <li class="slide-container">
                         <div class="slide">
-                          <img src="/assets/img/products/brian-babb-XbwHrt87mQ0-unsplash.jpg" />
+                          <img src="{{productDetail.feature.image.url}}" />
                         </div>
                     <div class="nav">
                       <label for="img-1" class="prev">&#x2039;</label>
@@ -39,7 +39,7 @@
                     <input type="radio" name="radio-btn" id="img-3" />
                     <li class="slide-container">
                         <div class="slide">
-                          <img src="/assets/img/products/chastity-cortijo-R-w5Q-4Mqm0-unsplash.jpg" />
+                          <img src="{{productDetail.feature.imageone.url}}" />
                         </div>
                     <div class="nav">
                       <label for="img-2" class="prev">&#x2039;</label>
@@ -50,7 +50,7 @@
                     <input type="radio" name="radio-btn" id="img-4" />
                     <li class="slide-container">
                         <div class="slide">
-                          <img src="/assets/img/products/francesca-tosolini-tHkJAMcO3QE-unsplash.jpg" />
+                          <img src="{{productDetail.feature.imagetwo.url}}" />
                         </div>
                     <div class="nav">
                       <label for="img-3" class="prev">&#x2039;</label>
@@ -61,7 +61,7 @@
                     <input type="radio" name="radio-btn" id="img-5" />
                     <li class="slide-container">
                         <div class="slide">
-                          <img src="/assets/img/products/francesca-tosolini-tHkJAMcO3QE-unsplash.jpg" />
+                          <img src="{{productDetail.feature.imagethree.url}}" />
                         </div>
                     <div class="nav">
                       <label for="img-4" class="prev">&#x2039;</label>
@@ -107,30 +107,21 @@
                                 <i class="fa fa-comment text-dark px-1" aria-hidden="true"></i> 23 comment
                               </div>
                                <div class="col-lg-3 col-md-3 col-6 p-3 text-secondary fs-7">
-                                <i class="fa fa-calendar px-1 text-dark" aria-hidden="true"></i> May, 2, 2023
+                                <i class="fa fa-calendar px-1 text-dark" aria-hidden="true"></i> {{productDetail.feature.buildyear}}
                               </div>
                              
                         </div>
                         
                       </div>
                         <div class="col-lg-8 col-md-12 col-sm-12 p-3">
-                            <h1 class="fs-3 fw-bold mt-3 ">New Apartment Nice view</h1>
+                            <h1 class="fs-3 fw-bold mt-3 ">{{productDetail.title}}</h1>
                             <div class="loc fs-5 fw-semibold mb-5">
-                              <i class="fa fa-location-dot px-2 text-danger" aria-hidden="true"></i><span>Toronto, On</span>
+                              <i class="fa fa-location-dot px-2 text-danger" aria-hidden="true"></i><span>{{productDetail.location.country}} {{productDetail.location.city}}</span>
                             </div>
                           <div class="discrp p-2 shadow">
                             <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-4"> Discription</h2>
                             <p class="fs-6 px-4 text-secondary">
-                              Massa tempor nec feugiat nisl pretium. Egestas fringilla 
-                              phasellus faucibus scelerisque eleifend donec Porta nibh
-                              venenatis cras sed felis eget velit aliquet. Neque volutpat
-                                ac tincidunt vitae semper quis lectus. Turpis in eu mi bibendum
-                                neque egestas congue quisque. Sed elementum tempus egestas sed 
-                                sed risus pretium quam. Dignissim sodales ut eu sem. Nibh mauris 
-                                cursus mattis molestee iaculis at erat pellentesque. Id interdum 
-                                velit laoreet id donec ultrices tincidunt. To the left is the modern
-                                  kitchen with central island, leading through to the unique breakfast family room which feature
-                              glass walls and doors out onto the garden and access to the separate utility room.
+                              {{productDetail.description}}
                             </p>
                           </div>
                           <div class="Propertydetial mt-5 p-2 shadow-sm">
@@ -143,37 +134,37 @@
                                     <p class="fs-6 fw-semibold text-secondary">Property Id <span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> Mu0001 </p> 
+                                    <p class="fs-6 dark-blue-color"> {{productDetail.id}} </p> 
                                   </div>
                                   <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Room<span>:</span></p>
+                                    <p class="fs-6 fw-semibold text-secondary">Extra Room<span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> 4</p> 
+                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.extraroom}}</p> 
                                   </div>
                                   <div class="col-6 p-1">
                                     <p class="fs-6 fw-semibold text-secondary">Bedroom <span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color">2 </p> 
+                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.bed}} </p> 
                                   </div>
                                   <div class="col-6 p-1">
                                     <p class="fs-6 fw-semibold text-secondary">Bathroom <span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> 2 </p> 
+                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.bath}}</p> 
                                   </div>
                                   <div class="col-6 p-1">
                                     <p class="fs-6 fw-semibold text-secondary">Grauge <span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> 1 </p> 
+                                    <p class="fs-6 dark-blue-color"> {{productDetail.feature.garauge}} </p> 
                                   </div>
                                   <div class="col-6 p-1">
                                     <p class="fs-6 fw-semibold text-secondary">Floor <span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> 2 </p> 
+                                    <p class="fs-6 dark-blue-color"> {{productDetail.feature.floor}} </p> 
                                   </div>
                                 </div>
                               </div>
@@ -184,34 +175,34 @@
                                     <p class="fs-6 fw-semibold text-secondary">Status <span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> For Rent </p> 
+                                    <p class="fs-6 dark-blue-color">{{productfeature}}</p> 
                                   </div>
                                   <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Lot area <span>:</span></p>
+                                    <p class="fs-6 fw-semibold text-secondary">Building Area<span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> 300 <span>sqrft</span> </p> 
+                                    <p class="fs-6 dark-blue-color"> {{productDetail.feature.area}} <span>sqrft</span> </p> 
                                   </div>
                                   <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">building Area<span>:</span></p>
+                                    <p class="fs-6 fw-semibold text-secondary">Lot Area<span>:</span></p>
                                   </div>
 
                                   
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color">234 <span>sqrft</span></p> 
+                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.lotarea}} <span>sqrft</span></p> 
                                   </div>
                                 
                                   <div class="col-6 p-1">
                                     <p class="fs-6 fw-semibold text-secondary">Build Year <span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> 1998 </p> 
+                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.buildyear}} </p> 
                                   </div>
                                   <div class="col-6 p-1">
                                     <p class="fs-6 fw-semibold text-secondary">Price <span>:</span></p>
                                   </div>
                                   <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> 35,500 <span> <i class="fa fa-dollar" aria-hidden="true"></i></span></p> 
+                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.price}}<span> <i class="fa fa-dollar" aria-hidden="true"></i></span></p> 
                                   </div>
                               
                                 </div>
@@ -223,96 +214,14 @@
                             <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5 "> Animaties</h2>
                             <div class="row m-0">
                               
+                              {% for i in amenites %}
                               <div class="col-xl-4 col-md-6 col-sm-12">
                                 <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-off px-2 " aria-hidden="true"></i> 
-                                  <span>Air Condision</span>
+                                  <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i> 
+                                  <span>{{i}}</span>
                                 </div>
                               </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-off px-2 " aria-hidden="true"></i> 
-                                  <span></span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Wifi</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Parking</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Swimming Pool</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Yard</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Referagerator</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Gym</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Air Condision</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Air Condision</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Air Condision</span>
-                                </div>
-                              </div>
-                                <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on px-2 light-blue-cl" aria-hidden="true"></i> 
-                                  <span>Air Condision</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-off px-2 " aria-hidden="true"></i> 
-                                  <span>Air Condision</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-off px-2 " aria-hidden="true"></i> 
-                                  <span>Air Condision</span>
-                                </div>
-                              </div>
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-off px-2 " aria-hidden="true"></i> 
-                                  <span>Air Condision</span>
-                                </div>
-                              </div>
+                            {% endfor %}
                               
                             </div>
                         
@@ -322,19 +231,19 @@
                             <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5 "> Galary</h2>
                             <div class="row m-0">
                               <div class="col-lg-12 col-md-12 col-sm-12 m-0 p-1">
-                                <img src="/assets/img/products/etienne-beauregard-riverin-B0aCvAVSX8E-unsplash.jpg" alt="" class="galary-img ">
+                                <img src="{{ productDetail.feature.coverimage.url}}" alt="" class="galary-img ">
                               </div>
                               <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-1">
-                                <img src="/assets/img/products/avi-werde-hHz4yrvxwlA-unsplash.jpg" alt="" class="galary-img">
+                                <img src="{{productDetail.feature.image.url}}" alt="" class="galary-img">
                               </div>
                               <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-1">
-                                <img src="/assets/img/products/brian-babb-XbwHrt87mQ0-unsplash.jpg" alt="" class="w-100 ">
+                                <img src="{{productDetail.feature.imageone.url}}" alt="" class="w-100 ">
                               </div>
                               <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-1">
-                                <img src="/assets/img/products/brian-babb-XbwHrt87mQ0-unsplash.jpg" alt="" class="w-100 ">
+                                <img src="{{productDetail.feature.imagetwo.url}}" alt="" class="w-100 ">
                               </div>
                               <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-1">
-                                <img src="/assets/img/products/brian-babb-XbwHrt87mQ0-unsplash.jpg" alt="" class="w-100 ">
+                                <img src="{{productDetail.feature.imagethree.url}}" alt="" class="w-100 ">
                               </div>
                               
                             </div>
@@ -345,7 +254,7 @@
                             <div class="row m-0 mt-3">
                               <div class="col-12">
                                   <div class="w-100">
-                                    <iframe src="https://www.google.com/maps?q=toronto&amp;z=9&amp;output=embed" class="w-100" style="height:20em;" allowfullscreen="allowfullscreen"></iframe>
+                                    <iframe src="https://www.google.com/maps?q={{productDetail.location.city}}&amp;z=9&amp;output=embed" class="w-100" style="height:20em;" allowfullscreen="allowfullscreen"></iframe>
                                   </div>
                               </div>
                               <div class="col-12">
