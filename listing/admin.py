@@ -9,10 +9,10 @@ class FeatureAdmin(admin.ModelAdmin):
     list_display = ['id','floor']
 
 admin.site.register(Location)
-admin.site.register(Feature , FeatureAdmin)
-admin.site.register(Product , ProductAdmin)
-admin.site.register(AmenitiesAdmin)
-admin.site.register(AmenitiesAddListing)
+admin.site.register(AgentMessage)
+admin.site.register(ProductPropertyModel)
+admin.site.register(ProductAmenitiesModel)
+admin.site.register(ProductImageModel)
 admin.site.register(WishList)
 admin.site.register(ProducttRate)
 admin.site.register(CustomUser)

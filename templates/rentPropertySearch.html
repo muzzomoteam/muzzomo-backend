@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'base/nav.html' %}
+{% include 'base/scrolled-up.html' %}
+    <!-- Start Banner-->
+    <div class="head-title text-center py-5 " id="up-section">
+        <h1 class="fs-2 fw-bold  dark-blue-color">
+         Rental Properties Searching List
+        </h1>
+        <span></span>
+    </div>
+          <!-- End Banner-->
+          
+    <!-- Start SearchArea-->
+      
+    <div class=" dark-blue-bg p-3 mb-5dark-blue-color">
+      <div class=" dark-blue-bg p-3 mb-5dark-blue-color">
+        
+        <form class="" method="get">
+              <div class=" ">
+                <div class="row m-0 w-100">
+                  <div class="col-lg-3 col-md-3 col-sm-12  p-1">
+                    <select class="form-select form-select" aria-label=".form-select example">
+                      
+                      <option selected value="1">Toronto, On</option>
+                      <option value="2">Mississega</option>
+                      <option value="3">Oshawa</option>
+                      <option value="1">Toronto, On</option>
+                      <option value="2">Mississega</option>
+                      <option value="3">Oshawa</option>
+                      <option value="1">Toronto, On</option>
+                      <option value="2">Mississega</option>
+                      <option value="3">Oshawa</option>
+                      <option value="1">Toronto, On</option>
+                      <option value="2">Mississega</option>
+                      <option value="3">Oshawa</option>
+                      <option value="1">Toronto, On</option>
+                      <option value="2">Mississega</option>
+                      <option value="3">Oshawa</option>
+                    </select> 
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-12  p-1">
+                    <select class="form-select form-select" aria-label=".form-select example">
+                      <option selected>Price sort</option>
+                      <option value="1">Low to high price</option>
+                      <option value="2">High to low price</option>
+                      <option value="3">default</option>
+                    </select> 
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-12  p-1">
+                    <select class="form-select form-select" aria-label=".form-select example">
+                      <option selected>Area Sort</option>
+                      <option value="1">Low to high</option>
+                      <option value="2">High to low</option>
+                      <option value="3">Default</option>
+                    </select> 
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-12  p-1">
+                    <select class="form-select form-select" aria-label=".form-select example">
+                      <option selected>Type</option>
+                      <option value="1">Room</option>
+                      <option value="2">Home</option>
+                      <option value="3">Condo</option>
+                      <option value="3">Apartment</option>
+                      <option value="3">Land</option>
+                    </select> 
+                  </div>
+                
+                  <div class="col-lg-2 col-md-2 col-sm-12  p-1">
+                    <button type="button" class="btn btn-info light-blue-bg text-light bg-opacity-10 w-100">Search</button> 
+                  </div>
+                  
+                </div>
+              </div>
+          </form>
+      </div>
+      </div>
+        <!-- Start PropertyList Body-->
+    <div class="divBody mt-2 mb-5">
+        <div class="row m-0 shadow-sm">
+          {% for i in productFilter %}
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="card w-100 position-relative shadow-lg">
+                  <a href="{% url 'productDetailselect' i.id %}"><img src="{{i.coverPhoto.url}}"
+                      class="card-img-top" alt="..."></a>
+                  <div class="card-body">
+                    <div class="left-top fs-6 bg-warning text-light px-2 py-0 ">
+                      Featured
+                    </div>
+                    <div class="right-top border-r-50">
+                      <img src="assets/img/team/1.jpg" width="100%" alt="">
+                    </div>
+                    <div class="detials p-2 pt-0 ">
+                      <h4 class=" fs-5 fw-bold dark-blue-color">For Rent</h4>
+                      <h5 class="fs-6 pt-1 fw-bold dark-blue-color">{{i.tile}}</h5>
+                      <p class="fw-bold pb-0"><i class="fa fa-location-dot  me-2 text-danger"></i><span
+                          class="text-secondary">{{ i.city }}</span></p>
+                      <div class="row m-0 p-0 text-start">
+                        <div class="col px-2">
+                          <p class="fs-7"><span class="fw-bolder me-2">{{i.bed}}</span> <span
+                              class="text-secondary">Bedroom</span></p>
+                        </div>
+                        <div class="col px-2">
+                          <p class="fs-7"><span class="fw-bolder me-2">{{i.bath}}</span><span
+                              class="text-secondary">Bathroom</span></p>
+                        </div>
+                        <div class="col px-2">
+                          <p class="fs-7"><span class="fw-bolder me-2">{{i.area}}</span><span
+                              class="text-secondary">Squre ft</span></p>
+                        </div>
+          
+                      </div>
+                      <div class="row m-0 mb-2">
+                        <div class="col-1 m-1 b-black-5 text-center pt-2 fs-5" style="width: 40px; height: 40px;" title="sdf"><a
+                            href="#"><i class="fa fa-expand text-secondary"></i></a></div>
+                        <div class="col-1 m-1 b-black-5 text-center pt-2 fs-5" style="width: 40px; height: 40px;"><a href="#"><i
+                              class="fa fa-heart  text-secondary"></i></a></div>
+                        <div class="col-1 m-1 b-black-5 text-center pt-2 fs-5" style="width: 40px; height: 40px;"><a href="#"><i
+                              class="fa fa-plus-circle text-secondary"></i></a></div>
+          
+                      </div>
+                      <h2 class="fs-5 pt-3 fw-bold m-1 dark-blue-color">{{i.price}}</h2>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              {% if productlists.has_other_pages %}
+            <ul class="pagination justify-content-center">
+              {% if productlists.has_previous %}
+                <li class="page-item"><a href="?page={{ productlists.previous_page_number }}" class="page-link">&laquo;</a></li>
+              {% else %}
+                <li class="disabled page-item"><a class="page-link">&laquo;</a></li>
+              {% endif %}
+              {% for i in productlists.paginator.page_range %}
+                {% if productlists.number == i %}
+                  <li class="page-item"><a href="" class="page-link">{{i}}</a></li>
+                {% else %}
+                  <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+                {% endif %}
+              {% endfor %}
+              {% if productlists.has_next %}
+                  <li class="page-item"><a href="?page={{ productlists.next_page_number }}" class="page-link" aria-label="Next">
+                      <span aria-label="true">&raquo;</span>
+                  </a></li>
+              {% else %}
+                <li  class="disabled page-item"><a class="page-link">&raquo;</a></li>
+              {% endif %}
+            </ul>
+          {% endif %}
+        </div>
+    </div>
+    <!-- End PropertyList Body-->
+    {% include 'base/contact.html' %}
+    {% endblock content %}

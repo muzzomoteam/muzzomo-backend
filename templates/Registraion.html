@@ -12,50 +12,43 @@
             </h1>
             <span></span>
         </div>
-        <form action="">
+        <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="row m-0">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-
-                    <span class="text-light"><i class="fa fa-user px-1" aria-hidden="true"></i>Full Name</span>
-                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <input type="file" name="profileimage">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <span class="text-light"><i class="fa fa-user px-1" aria-hidden="true"></i>Name</span>
+                    <input type="text" name="txtname" class="form-control mb-3 mb-3 mb-3 mt-2" required>
+                    <span class="text-light"><i class="fa fa-user px-1" aria-hidden="true"></i>Last Name</span>
+                    <input type="text" name="txtlname" class="form-control mb-3 mb-3 mb-3 mt-2" required>
                     <span class="text-light"><i class="fa fa-envelope px-1" aria-hidden="true"></i> Email</span>
-                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <input type="email" name="txtemail" class="form-control mb-3 mb-3 mb-3 mt-2" required>
                     <span class="text-light"><i class="fa fa-phone px-1" aria-hidden="true"></i> Phone</span>
-                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <input type="text" name="txtphone" class="form-control mb-3 mb-3 mb-3 mt-2" required>
 
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <span class="text-light"> <i class="fa fa-lock px-1" aria-hidden="true"></i> Password</span>
-                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <input type="password" name="txtpassword1" class="form-control mb-3 mb-3 mb-3 mt-2" required>
                     <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
                         Password</span>
-                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
+                    <input type="password" name="txtpassword2" class="form-control mb-3 mb-3 mb-3 mt-2" required>
                     <span class="text-light"><i class="fa fa-user px-1" aria-hidden="true"></i> User</span>
 
-                    <select id="select-user" class="form-select form-select-lg form-control mb-3 mb-3 mt-2 fs-6"
+                    <select id="select-user" name="txtusertype" required
+                        class="form-select form-select-lg form-control mb-3 mb-3 mt-2 fs-6"
                         aria-label=".form-select-lg example" onchange="usertyp()">
-                        <option selected class="sel-1">User</option>
-                        <option class="sel-2" value="2">Professional</option>
+                        <option selected class="sel-1" value="User">User</option>
+                        <option class="sel-2" value="Agent">Agent</option>
+                        <option class="sel-2" value="Expert">Expert</option>
                     </select>
+                    <span class="text-light"><i class="fa fa-location-dot px-1" aria-hidden="true"></i>City</span>
+                    <input type="text" name="txtcity" class="form-control mb-3 mb-3 mb-3 mt-2" required>
 
+                </div>
 
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 d-re-prof">
-                    <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
-                        Password</span>
-                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
-                    <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
-                        Password</span>
-                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 d-re-prof">
-                    <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
-                        Password</span>
-                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
-                    <span class="text-light"><i class="fa fa-keyboard px-1" aria-hidden="true"></i> Confirm
-                        Password</span>
-                    <input type="text" class="form-control mb-3 mb-3 mb-3 mt-2">
-                </div>
             </div>
 
             <div class="row m-5">

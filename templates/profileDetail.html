@@ -20,12 +20,12 @@
   </div>
   <div class="row m-0 py-3 shadow-sm pb-5">
     <div class="col-xl-3  col-md-4 col-sm-12 profileImage text-center pt-3 ">
-      <img src="/assets/img/team/1.jpg" class="w-100 border-r-50 " alt="">
+      <img src="{{agentProfile.admin.profile_image.url}}" class="w-100 border-r-50 " alt="">
 
     </div>
     <div class="col-xl-8 col-md-7 col-sm-12 p-3 agentPropertyDiv px-5 ">
       <div class="container fs-5  fw-semibold pb-sm-3 d-block mt-xl-3 mt-md-1 mt-sm-0">
-        <h3 class="agentName fw-bold pt-2">Karim Farhang</h3>
+        <h3 class="agentName fw-bold pt-2">{{agentProfile.admin.first_name}} {{agentProfile.admin.last_name}}</h3>
         <span class="d-block text-warning fs-6 ">
           <i class="fs-6 fa fa-star" aria-hidden="true"></i>
           <i class="fs-6 fa fa-star" aria-hidden="true"></i>
@@ -36,13 +36,13 @@
         <span class="d-block text-secondary mb-3 fs-7">
           I am not working for the one how dont know the role
         </span>
-        <h5 class=" fw-bold text-dark ">Agency : <span class=" fw-normal text-secondary mx-4"> Broker agent</span></h5>
-        <h5 class=" fw-bold text-dark ">Location : <span class=" fw-normal text-secondary mx-4"> Toranto, On</span></h5>
+        <h5 class=" fw-bold text-dark "> Agency : <span class=" fw-normal text-secondary mx-4"> Broker agent</span></h5>
+        <h5 class=" fw-bold text-dark ">Location : <span class=" fw-normal text-secondary mx-4">{{agentProfile.location.city}}</span></h5>
         <h5 class=" fw-bold text-dark ">Experience : <span class=" fw-normal text-secondary mx-4"> +5 years </span></h5>
-        <h5 class=" fw-bold text-dark ">Agency : <span class=" fw-normal text-secondary mx-4"> Broker agent</span></h5>
-        <h5 class=" fw-bold text-dark ">Phone : <span class=" fw-normal text-secondary mx-4"> (+93) 782800275</span>
+        <h5 class=" fw-bold text-dark ">Active : <span class=" fw-normal text-secondary mx-4">{{agentProfile.is_active}}</span></h5>
+        <h5 class=" fw-bold text-dark ">Phone : <span class=" fw-normal text-secondary mx-4"> {{agentProfile.phone}}</span>
         </h5>
-        <h5 class=" fw-bold text-dark ">Email : <span class=" fw-normal text-secondary mx-4"> example@gmail.com</span>
+        <h5 class=" fw-bold text-dark ">Email : <span class=" fw-normal text-secondary mx-4">{{agentProfile.admin.email}}</span>
         </h5>
 
 
@@ -91,68 +91,118 @@
       Contact Agent
     </h1>
   </div>
+  <form action="/agentContact/{{agentProfile.id}}" method="post">
+    {% csrf_token %}
   <div class="row m-0">
     <div class="col-lg-4 col-md-4 col-sm-12">
       <span class="d-block text-secondary"><i class="fa fa-user px-1" aria-hidden="true"></i> Full name</span>
-      <input type="text" class="form-control">
+      <input name="txtfullname" type="text" class="form-control">
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-12">
       <span class="d-block text-secondary"><i class="fa fa-phone px-1" aria-hidden="true"></i> Phone</span>
-      <input type="text" class="form-control">
+      <input name="txtphone" type="text" class="form-control">
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12">
       <span class="d-block text-secondary"><i class="fa fa-wrench px-1" aria-hidden="true"></i> Service</span>
-      <button type="button" class="btn btn-light w-100 dropdown-toggle" id="dropdownMenuButton2"
-        data-bs-toggle="dropdown" aria-expanded="false">Default Sorting</button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
+      <input name="txtservice" type="text" class="form-control">
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12">
       <span class="d-block text-secondary"><i class="fa fa-building px-1" aria-hidden="true"></i> Proptype</span>
-      <button type="button" class="btn btn-light w-100  dropdown-toggle" id="dropdownMenuButton2"
-        data-bs-toggle="dropdown" aria-expanded="false">Default Sorting</button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
+      <input name="txtproptype" type="text" class="form-control">
     </div>
   </div>
   <div class="row m-0">
     <div class="col 12">
       <span class="contactForRequestSpans text-secondary"><i class="fa-solid fa-message px-1"></i> Message</span>
-      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
-      <button class="btn btn-primary float-end mt-3 px-5 muzzomoButtons">Submit</button>
+      <textarea name="txtmessage" id="" cols="30" rows="5" class="form-control"></textarea>
+      <button type="submit" class="btn btn-primary float-end mt-3 px-5 muzzomoButtons">Submit</button>
     </div>
   </div>
+</form>
 </div>
 <!-- End Div Contact Request For -->
 <div class="sec-m comment-section">
   <div class="comment my-5 p-2 shadow-sm">
     <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-2 "> Users view</h2>
     <div class="star px-4 text-warning mb-5">
+      {% for i in starCount %}
       <i class="fa fa-star text-warning " aria-hidden="true"></i>
-      <i class="fa fa-star text-warning " aria-hidden="true"></i>
-      <i class="fa fa-star text-warning " aria-hidden="true"></i>
-      <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-      <i class="fa fa-star star-null " aria-hidden="true"></i>
-      ( <span>32</span> views )
+      {% endfor %}
+      {% for i in starNullCount %}
+      <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+      {% endfor %}
+      ( <span>{{viewNumber}}</span> views )
     </div>
     <div class="comment-view">
       <div class="row m-0">
-
+        {% for comment in agentRate %}
+        <div class="col-12">
+          <div class="comment-user">
+            <img src="{{comment.user.profile_image.url}}" alt="Profile Image">
+            <h2 class="fs-6 fw-bold dark-blue-color mt-2">
+              {{comment.user.username}}
+            </h2>
+          <div class="row m-0 p-0 mt-2">
+            <div class="col-6 p-0">
+              <div class="star px-2 text-warning  fs-7">
+                {% if comment.rate == 0 %}
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                {% elif comment.rate == 1 %}
+                  <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                  <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                  <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                  <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                  <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                {% elif comment.rate == 2 %}
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                {% elif comment.rate == 3 %}
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                {% elif comment.rate == 4 %}
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                {% else %}
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                {% endif %}  
+              </div>
+            </div>
+            <div class="col-6 fs-7 text-end text-secondary">{{ now }}</div>
+          </div>
+            <p class="fs-7 px-2 text-secondary">
+              {{comment.comment}}
+            </p>
+          </div>
+        </div>
+        {% endfor %}
       </div>
     </div>
+  </div>
   </div>
 
 
   <div class="comment-add my-5 p-2 shadow-sm">
     <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-2 "> Add View</h2>
-    <form class="p-3">
+    <form class="p-3" action="/agentComments/{{agentProfile.id}}" method="post">
+      {% csrf_token %}
       <div class="mb-3">
         <label for="comment" class="form-label fw-bold dark-blue-color">Comment:</label>
         <textarea id="comment" name="comment" class="form-control" placeholder="Your Comment" rows="4"></textarea>
@@ -160,15 +210,15 @@
       <div class="mb-3">
         <label for="rating" class="form-label fw-bold dark-blue-color">Rating:</label>
         <div class="rating-input">
-          <input type="radio" id="star5" name="rating" value="5" onclick="rate(5)">
+          <input type="radio" id="star5" name="rating1" value="5" onclick="rate(5)">
           <label for="star5"><i class="fa fa-star fs-5" aria-hidden="true"></i> </label>
-          <input type="radio" id="star4" name="rating" value="4" onclick="rate(4)">
+          <input type="radio" id="star4" name="rating2" value="4" onclick="rate(4)">
           <label for="star4"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
-          <input type="radio" id="star3" name="rating" value="3" onclick="rate(3)">
+          <input type="radio" id="star3" name="rating3" value="3" onclick="rate(3)">
           <label for="star3"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
-          <input type="radio" id="star2" name="rating" value="2" onclick="rate(2)">
+          <input type="radio" id="star2" name="rating4" value="2" onclick="rate(2)">
           <label for="star2"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
-          <input type="radio" id="star1" name="rating" value="1" onclick="rate(1)">
+          <input type="radio" id="star1" name="rating5" value="1" onclick="rate(1)">
           <label for="star1"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
         </div>
       </div>

@@ -9,13 +9,14 @@
     <div class="ba-title fs-1 fw-bold " id="title-font-sm">
       Find Your Dream Home.
     </div>
-      <form action="#" class="search-form">
+      <form action="{% url 'search-banner' %}" class="search-form" method="post">
+        {% csrf_token %}
         <div class="input-group mb-3 ">
-          <input type="text" class="form-control " 
-              placeholder="Country, City, Postal code " 
+          <input name="txtsearch" type="text" class="form-control " 
+              placeholder="Buy , Rent " 
               aria-label="Recipient's username" aria-describedby="button-addon2">
           <button class="btn btn-outline-light dark-blue-bg" 
-              type="button" id="button-addon2">
+              type="submit" id="button-addon2">
                 <i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
       </form>
@@ -33,11 +34,75 @@
       </div>
      <div class="listing shadow">
       <div class="row m-0">
-            
+            {% for i in products %}
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+              <div class="card w-100 position-relative shadow-lg">
+                <a href="{% url 'productDetailselect' i.id %}"><img src="{{i.coverPhoto.url}}"
+                    class="card-img-top" alt="..."></a>
+                <div class="card-body">
+                  <div class="left-top fs-6 bg-warning text-light px-2 py-0 ">
+                    Featured
+                  </div>
+                  <div class="right-top border-r-50">
+                    <img src="{{i.agent.admin.profile_image.url}}" width="100%" alt="">
+                  </div>
+                  <div class="detials p-2 pt-0 ">
+                    <h4 class=" fs-5 fw-bold dark-blue-color">{{i.status}}</h4>
+                    <h5 class="fs-6 pt-1 fw-bold dark-blue-color">{{i.tile}}</h5>
+                    <p class="fw-bold pb-0"><i class="fa fa-location-dot  me-2 text-danger"></i><span
+                        class="text-secondary">{{i.city}}</span></p>
+                    <div class="row m-0 p-0 text-start">
+                      <div class="col px-2">
+                        <p class="fs-7"><span class="fw-bolder me-2">{{i.bed}}</span> <span
+                            class="text-secondary">Bedroom</span></p>
+                      </div>
+                      <div class="col px-2">
+                        <p class="fs-7"><span class="fw-bolder me-2">{{i.bath}}</span><span
+                            class="text-secondary">Bathroom</span></p>
+                      </div>
+                      <div class="col px-2">
+                        <p class="fs-7"><span class="fw-bolder me-2">{{i.area}}</span><span
+                            class="text-secondary">Squre ft</span></p>
+                      </div>
+        
+                    </div>
+                    <div class="row m-0 mb-2">
+                      <div class="col-1 m-1 b-black-5 text-center pt-2 fs-5" style="width: 40px; height: 40px;"><a href="{% url 'productDetailselect' i.id %}"><i
+                            class="fa fa-plus-circle text-secondary"></i></a></div>
+        
+                    </div>
+                    <h2 class="fs-5 pt-3 fw-bold m-1 dark-blue-color">{{i.price}}$</h2>
+        
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
         <div class="col-12">
           <div class="more py-3 mb-2 text-end">
-            
-          <button class="btn btn-outline-dark  ">More Listing</button>
+            {% if products.has_other_pages %}
+            <ul class="pagination justify-content-center">
+              {% if products.has_previous %}
+                <li class="page-item"><a href="?page={{ products.previous_page_number }}" class="page-link">&laquo;</a></li>
+              {% else %}
+                <li class="disabled page-item"><a class="page-link">&laquo;</a></li>
+              {% endif %}
+              {% for i in products.paginator.page_range %}
+                {% if products.number == i %}
+                  <li class="page-item"><a href="" class="page-link">{{i}}</a></li>
+                {% else %}
+                  <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+                {% endif %}
+              {% endfor %}
+              {% if products.has_next %}
+                  <li class="page-item"><a href="?page={{ products.next_page_number }}" class="page-link" aria-label="Next">
+                      <span aria-label="true">&raquo;</span>
+                  </a></li>
+              {% else %}
+                <li  class="disabled page-item"><a class="page-link">&raquo;</a></li>
+              {% endif %}
+            </ul>
+          {% endif %}
           </div>
         </div>
       </div>
@@ -57,7 +122,30 @@
       </div>
      <div class="service-listing shadow">
       <div class="row services-box m-0">
-
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 position-relative p-3">
+          <div class="service-box shadow w-100 text-center p-3 my-3 ">
+            <h2 class=" fw-bold dark-blue-color pb-3 pt-3"> Rent a home </h2>
+            <div class="service-logo"><img src="{% static '/img/banner/home.svg' %}" width="100%" alt=""></div>
+            <p class="card-text  p-4">Discover your forever home and make your dreams a reality. </p>
+            <a href="{% url 'rent' %}">Rent a home now</a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 position-relative p-3">
+          <div class="service-box shadow w-100 text-center p-3 my-3 ">
+            <h2 class=" fw-bold dark-blue-color pb-3 pt-3"> Sale a home </h2>
+            <div class="service-logo"><img src="{% static '/img/banner/home.svg' %}" width="100%" alt=""></div>
+            <p class="card-text  p-4">Discover your forever home and make your dreams a reality. </p>
+            <a href="{% url 'addlisting' %}">Sale a home now</a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 position-relative p-3">
+          <div class="service-box shadow w-100 text-center p-3 my-3 ">
+            <h2 class=" fw-bold dark-blue-color pb-3 pt-3"> Buy a home </h2>
+            <div class="service-logo"><img src="{% static '/img/banner/home.svg' %}" width="100%" alt=""></div>
+            <p class="card-text  p-4">Discover your forever home and make your dreams a reality. </p>
+            <a href="{% url 'buy' %}">Buy a home now</a>
+          </div>
+        </div>
       </div>
        
      </div>
@@ -76,12 +164,46 @@
       </div>
      <div class="listing shadow">
         <div class="row m-0">
-
+          {% for i in agents %}
+          <div class="col-lg-3 col-md-4 col-sm-12">
+            <div class="container p-1 shadow-sm position-relative">
+              <img src="{{i.admin.profile_image.url}}" width="100%" alt="">
+              <div class="agent-detial">
+                  <div class="row m-0">
+                    <div class="col-lg-7 col-md-7 col-6">
+                      <div class="container p-0 py-1 fs-7">
+                        <h5 class="fs-6 fw-bold m-0">{{i.admin.first_name}} {{i.admin.last_name}}</h5>
+                          <div class="content-agent ">
+                            <p class="m-0 pt-1 prog-text-color">  <i class="fa fa-location-dot text-danger"></i>
+                              {{i.location.city}}
+                              </p>
+                            <p class="p-0 mb-0 prog-text-color"><i class="fa fa-user text-black" aria-hidden="true"></i> Broker Agent</p>
+                           
+                          </div>
+                        <div class="p-1 m-0">
+                          <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-6 p-0">
+                      <div class="btn-contact-agent h-100  ">
+                        <a href="{% url 'agentpage' i.admin.id %}" class="text-light nav-link fw-bold py-4"> Contact</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+        {% endfor %}
         </div>
         <div class="col-12">
           <div class="more py-3 mb-2 text-end">
             
-          <button class="btn btn-outline-dark  ">More Listing</button>
+          <a href="{% url 'agent' %}" class="btn btn-outline-dark  ">More Listing</a>
           </div>
         </div>
      </div>
@@ -99,13 +221,47 @@
         <span></span>
       </div>
      <div class="listing shadow">
-        <div class="row-m-0">
-
+        <div class="row m-0">
+          {% for i in experts %}
+          <div class="col-xl-2 col-md-3 col-6">
+            <div class="container p-1 position-relative">
+                <img class ='border-r-50' src="{{i.admin.profile_image.url}}" width="100%" alt="">
+                <div class="agent-detial shadow-sm">
+                    <div class="row m-0">
+                      <div class="col-12">
+                        <div class="container p-0 py-1 fs-7">
+                          <h5 class="fs-6 fw-bold m-0">{{i.admin.first_name}} {{i.admin.last_name}}</h5>
+                            <div class="content-agent ">
+                              <p class="m-0 pt-1 prog-text-color ">  <i class="fa fa-location-dot text-danger"></i>
+                                {{i.location.city}}
+                                </p>
+                              <p class="p-0 mb-0 prog-text-color"><i class="fa fa-user text-black" aria-hidden="true"></i>Expert</p>
+                             
+                            </div>
+                          <div class="p-1 m-0">
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 p-2 w-100">
+                        <div class="btn btn-dark dark-blue-bg w-100 py-0">
+                          <a href="{% url 'agentpage' i.admin.id %}" class="text-light nav-link fw-bold py-2"> Contact</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          {% endfor %}
         </div>
         <div class="col-12">
           <div class="more py-3 mb-2 text-end">
             
-          <button class="btn btn-outline-dark  ">More Listing</button>
+          <a href="{% url 'expert' %}" class="btn btn-outline-dark  ">More Listing</a>
           </div>
         </div>
      </div>

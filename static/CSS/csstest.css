@@ -69,7 +69,7 @@
     background-size:100% 30em;
     background-repeat: no-repeat;
     position: relative;
-    background-image: url('/assets/img/banner/banner\ larg.png');
+    background-image: url('/static/img/banner/banner\ larg.png');
     color: aliceblue;
     background-position: center;
 }
@@ -430,7 +430,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     
     .banner{
         
-    background-image: url('/assets/img/banner/banner\ meduim.png');
+    background-image: url('/static/img/banner/banner\ meduim.png');
     
     }
 
@@ -474,7 +474,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
    
     .banner{
         
-    background-image: url('/assets/img/banner/Banner\ small.png');}
+    background-image: url('/static/img/banner/Banner\ small.png');}
     .search-form{
         position:absolute;
         top: 10em;

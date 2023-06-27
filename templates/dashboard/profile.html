@@ -15,7 +15,7 @@
                     <div class="profile-section text-center p-3" >
                         
                           <div class="col-12  mt-2">
-                              <img id="imagePreview" src="/assets/img/team/3.jpg" width="100%" alt="Apartment Cover Image">
+                              <img id="imagePreview" src="{{user_obj.profile_image.url}}" width="100%" alt="Apartment Cover Image">
 
                           </div>
                           <div class="col-12">
@@ -24,7 +24,7 @@
                               </label>    
                             <input type="file" id="file-input" class="d-none" accept="image/*" onchange="previewImage(event)" class="form-control mt-2">
                           </div>
-                        <h3 class="dark-blue-color fw-bold fs-5 mt-3">Angela Green</h3>
+                        <h3 class="dark-blue-color fw-bold fs-5 mt-3">{{user_obj.first_name}} {{user_obj.last_name}}</h3>
                         <span class="text-secondary fs-7 d-block mb-3">Muzzomo Real Astate Agent</span>
                         <div class="star px-4 text-warning mb-5">
                             <i class="fa fa-star text-warning " aria-hidden="true"></i>
@@ -41,20 +41,24 @@
                     <div class="agent-information">
                         <div class="row m-0">
                             <div class="col-12 border-bottom">
-                              <label for="edit-field " class="fw-bold dark-blue-color pt-2">Full name</label>
-                              <input type="text" class="form-control mt-1 mb-2 edit-field" value='John Smith' >
+                              <label for="edit-field " class="fw-bold dark-blue-color pt-2">User name</label>
+                              <input type="text" class="form-control mt-1 mb-2 edit-field" value='{{user_obj.username}}' >
+                            </div>
+                            <div class="col-12 border-bottom">
+                              <label for="edit-field " class="fw-bold dark-blue-color pt-2">Name</label>
+                              <input type="text" class="form-control mt-1 mb-2 edit-field" value='{{user_obj.first_name}}' >
+                            </div>
+                            <div class="col-12 border-bottom">
+                              <label for="edit-field " class="fw-bold dark-blue-color pt-2">Last name</label>
+                              <input type="text" class="form-control mt-1 mb-2 edit-field" value='{{user_obj.last_name}}' >
                             </div>
                             <div class="col-12 border-bottom">
                                 <label for="edit-field " class="fw-bold dark-blue-color pt-2">Email</label>
-                                <input type="Email" class="form-control mt-1 mb-2 edit-field" value='John Smith' >
+                                <input type="Email" class="form-control mt-1 mb-2 edit-field" value='{{user_obj.email}}' >
                               </div>
                               <div class="col-12 border-bottom">
-                                <label for="edit-field " class="fw-bold dark-blue-color pt-2">Phone</label>
-                                <input type="Phone" class="form-control mt-1 mb-2 edit-field" value='0782800275' >
-                              </div>
-                              <div class="col-12 border-bottom">
-                                <label for="edit-field " class="fw-bold dark-blue-color pt-2">location</label>
-                                <input type="text" class="form-control mt-1 mb-2 edit-field" value='Toronto, On' >
+                                <label for="edit-field " class="fw-bold dark-blue-color pt-2">Type</label>
+                                <input type="text" class="form-control mt-1 mb-2 edit-field" value='{{user_obj.user_type}}' >
                               </div>
                               <div class="col-12 p-2 ">
                                 <button class="btn btn-info light-blue-bg text-light float-end">Apply</button>

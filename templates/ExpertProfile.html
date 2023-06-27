@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'base/nav.html' %}
+{% include 'base/scrolled-up.html' %}
+<!-- Start Banner-->
+<div class="head-title text-center py-5 mt-5">
+  <h1 class="fs-2 fw-bold  dark-blue-color">
+    Expert Profile
+  </h1>
+  <span></span>
+</div>
+<!-- End Banner-->
+<!-- Start Div Profile -->
+<div class="px-5">
+  <div class="sideLine ">
+    <h1 class="fs-2 fw-bold  dark-blue-color">
+      Profile Detial
+    </h1>
+  </div>
+  <div class="row m-0 py-3 shadow-sm pb-5">
+    <div class="col-xl-3  col-md-4 col-sm-12 profileImage text-center pt-3 ">
+      <img src="{{expertProfile.admin.profile_image.url}}" class="w-100 border-r-50 " alt="">
+
+    </div>
+    <div class="col-xl-8 col-md-7 col-sm-12 p-3 agentPropertyDiv px-5 ">
+      <div class="container fs-5  fw-semibold pb-sm-3 d-block mt-xl-3 mt-md-1 mt-sm-0">
+        <h3 class="agentName fw-bold pt-2">{{expertProfile.admin.first_name}} {{expertProfile.admin.last_name}}</h3>
+        <span class="d-block text-warning fs-6 ">
+          <i class="fs-6 fa fa-star" aria-hidden="true"></i>
+          <i class="fs-6 fa fa-star" aria-hidden="true"></i>
+          <i class="fs-6 fa fa-star" aria-hidden="true"></i>
+          <i class="fs-6 fa fa-star" aria-hidden="true"></i>
+          <i class="fs-6 fa fa-star" aria-hidden="true"></i>
+          (32 views)</span>
+        <span class="d-block text-secondary mb-3 fs-7">
+          I am not working for the one how dont know the role
+        </span>
+        <h5 class=" fw-bold text-dark "> Agency : <span class=" fw-normal text-secondary mx-4"> Broker agent</span></h5>
+        <h5 class=" fw-bold text-dark ">Location : <span class=" fw-normal text-secondary mx-4">{{expertProfile.location.city}}</span></h5>
+        <h5 class=" fw-bold text-dark ">Experience : <span class=" fw-normal text-secondary mx-4"> +5 years </span></h5>
+        <h5 class=" fw-bold text-dark ">Active : <span class=" fw-normal text-secondary mx-4">{{expertProfile.is_active}}</span></h5>
+        <h5 class=" fw-bold text-dark ">Phone : <span class=" fw-normal text-secondary mx-4"> {{expertProfile.phone}}</span>
+        </h5>
+        <h5 class=" fw-bold text-dark ">Email : <span class=" fw-normal text-secondary mx-4">{{expertProfile.admin.email}}</span>
+        </h5>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Div Profile -->
+<!-- Start Div Info -->
+<div class="p-5 bg-light">
+  <div class="sideLine  ">
+    <h1 class="fs-2 fw-bold  dark-blue-color">
+      Agent Info
+    </h1>
+  </div>
+  <div class="agentInfoParagraph m-1 text-secondary p-3 fs-6 ">
+    Massa tempor nec feugiat nisl pretium. Egestas fringilla phasellus faucibus scelerisque
+    eleifend donec PortaMassa tempor nec feugiat nisl pretium. Egestas fringilla phasellus
+    faucibus scelerisque eleifend donec PortaMassa tempor nec feugiat nisl pretium. Egestas
+    fringilla phasellus faucibus scelerisque eleifend donec PortaMassa tempor nec feugiat
+    nisl pretium. Egestas fringilla phasellus faucibus scelerisque eleifend donec PortaMassa
+    tempor nec feugiat nisl pretium. Egestas fringilla phasellus faucibus scelerisque eleifend
+    donec PortaMassa tempor nec feugiat nisl pretium. Egestas fringilla phasellus faucibus
+    scelerisque eleifend donec Porta
+  </div>
+</div>
+<!-- End Div Info -->
+<!-- Start Div Property Sold -->
+<div class="listing shadow px-5">
+  <div class="sideLine my-5">
+    <h1 class="fs-2 fw-bold  dark-blue-color">
+      Sold Property
+    </h1>
+  </div>
+  <div class="row m-0">
+
+  </div>
+
+</div>
+<!-- End Div Property Sold -->
+<!-- Start Div Contact Request For -->
+<div class="px-5 py-3 shadow-lg">
+  <div class="sideLine">
+    <h1 class="fs-2 fw-bold my-5 dark-blue-color">
+      Contact Agent
+    </h1>
+  </div>
+  <div class="row m-0">
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <span class="d-block text-secondary"><i class="fa fa-user px-1" aria-hidden="true"></i> Full name</span>
+      <input type="text" class="form-control">
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <span class="d-block text-secondary"><i class="fa fa-phone px-1" aria-hidden="true"></i> Phone</span>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <span class="d-block text-secondary"><i class="fa fa-wrench px-1" aria-hidden="true"></i> Service</span>
+      <button type="button" class="btn btn-light w-100 dropdown-toggle" id="dropdownMenuButton2"
+        data-bs-toggle="dropdown" aria-expanded="false">Default Sorting</button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <span class="d-block text-secondary"><i class="fa fa-building px-1" aria-hidden="true"></i> Proptype</span>
+      <button type="button" class="btn btn-light w-100  dropdown-toggle" id="dropdownMenuButton2"
+        data-bs-toggle="dropdown" aria-expanded="false">Default Sorting</button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row m-0">
+    <div class="col 12">
+      <span class="contactForRequestSpans text-secondary"><i class="fa-solid fa-message px-1"></i> Message</span>
+      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+      <button class="btn btn-primary float-end mt-3 px-5 muzzomoButtons">Submit</button>
+    </div>
+  </div>
+</div>
+<!-- End Div Contact Request For -->
+<div class="sec-m comment-section">
+  <div class="comment my-5 p-2 shadow-sm">
+    <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-2 "> Users view</h2>
+    <div class="star px-4 text-warning mb-5">
+      <i class="fa fa-star text-warning " aria-hidden="true"></i>
+      <i class="fa fa-star text-warning " aria-hidden="true"></i>
+      <i class="fa fa-star text-warning " aria-hidden="true"></i>
+      <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
+      <i class="fa fa-star star-null " aria-hidden="true"></i>
+      ( <span>32</span> views )
+    </div>
+    <div class="comment-view">
+      <div class="row m-0">
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="comment-add my-5 p-2 shadow-sm">
+    <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-2 "> Add View</h2>
+    <form class="p-3">
+      <div class="mb-3">
+        <label for="comment" class="form-label fw-bold dark-blue-color">Comment:</label>
+        <textarea id="comment" name="comment" class="form-control" placeholder="Your Comment" rows="4"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="rating" class="form-label fw-bold dark-blue-color">Rating:</label>
+        <div class="rating-input">
+          <input type="radio" id="star5" name="rating" value="5" onclick="rate(5)">
+          <label for="star5"><i class="fa fa-star fs-5" aria-hidden="true"></i> </label>
+          <input type="radio" id="star4" name="rating" value="4" onclick="rate(4)">
+          <label for="star4"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
+          <input type="radio" id="star3" name="rating" value="3" onclick="rate(3)">
+          <label for="star3"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
+          <input type="radio" id="star2" name="rating" value="2" onclick="rate(2)">
+          <label for="star2"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
+          <input type="radio" id="star1" name="rating" value="1" onclick="rate(1)">
+          <label for="star1"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-light dark-blue-bg">Submit</button>
+    </form>
+  </div>
+</div>
+<!-- Start Div Comment -->
+{% include 'base/contact.html' %}
+{% endblock content %}

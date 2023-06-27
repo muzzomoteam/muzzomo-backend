@@ -1,565 +1,784 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 {% include 'base/nav.html' %}
 {% include 'base/scrolled-up.html' %}
 <div class="body m-0">
-        <div class="head-title text-center py-5 mt-5">
-            <h1 class="fs-2 fw-bold  dark-blue-color">
-              Product Detial
-            </h1>
-            <span></span>
-        </div>
-            <div class="row m-0">
-                <div class="col-12 m-0  pb-5 w-100">
-                  <ul class="slides">
-                    <input type="radio" name="radio-btn" id="img-1" checked />
-                    <li class="slide-container">
-                    <div class="slide">
-                      <img src="{{productDetail.feature.coverimage.url}}" />
-                        </div>
-                    <div class="nav">
-                      <label for="img-6" class="prev">&#x2039;</label>
-                      <label for="img-2" class="next">&#x203a;</label>
+  <div class="head-title text-center py-5 mt-5">
+    <h1 class="fs-2 fw-bold  dark-blue-color">
+      Product Detial
+    </h1>
+    <span></span>
+  </div>
+  <div class="row m-0">
+    <div class="col-12 m-0  pb-5 w-100">
+      <ul class="slides">
+        <input type="radio" name="radio-btn" id="img-1" checked />
+        <li class="slide-container">
+          <div class="slide">
+            <img src="{{productDetail.coverPhoto.url}}" />
+          </div>
+          <div class="nav">
+            <label for="img-6" class="prev">&#x2039;</label>
+            <label for="img-2" class="next">&#x203a;</label>
+          </div>
+        </li>
+
+        <input type="radio" name="radio-btn" id="img-2" />
+        <li class="slide-container">
+          <div class="slide">
+            <img src="{{imageDetail.image.url}}" />
+          </div>
+          <div class="nav">
+            <label for="img-1" class="prev">&#x2039;</label>
+            <label for="img-3" class="next">&#x203a;</label>
+          </div>
+        </li>
+
+        <input type="radio" name="radio-btn" id="img-3" />
+        <li class="slide-container">
+          <div class="slide">
+            <img src="{{productDetail.feature.imageone.url}}" />
+          </div>
+          <div class="nav">
+            <label for="img-2" class="prev">&#x2039;</label>
+            <label for="img-4" class="next">&#x203a;</label>
+          </div>
+        </li>
+
+        <input type="radio" name="radio-btn" id="img-4" />
+        <li class="slide-container">
+          <div class="slide">
+            <img src="{{productDetail.feature.imagetwo.url}}" />
+          </div>
+          <div class="nav">
+            <label for="img-3" class="prev">&#x2039;</label>
+            <label for="img-5" class="next">&#x203a;</label>
+          </div>
+        </li>
+
+        <input type="radio" name="radio-btn" id="img-5" />
+        <li class="slide-container">
+          <div class="slide">
+            <img src="{{productDetail.feature.imagethree.url}}" />
+          </div>
+          <div class="nav">
+            <label for="img-4" class="prev">&#x2039;</label>
+            <label for="img-6" class="next">&#x203a;</label>
+          </div>
+        </li>
+        <li class="nav-dots">
+          <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+          <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+          <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+          <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+          <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+          <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 m-0">
+      <div class=" sec-m border-top pt-3">
+        <div class="row m-0">
+          <div class="col-lg-8 col-md-12 col-sm">
+            <div class="row text-center m-0">
+              <div class="col-lg-3 col-md-3 col-6 p-2">
+                {% if productDetail.status == True %}
+                <div class="w-100 p-1 fs-7 text-white  dark-blue-bg fs-5">For Rent</div>
+                {% else %}
+                <div class="w-100 p-1 fs-7 text-white  dark-blue-bg fs-5">{{productDetail.status}}</div>
+                {% endif %}
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-6 p-2">
+                <div class="w-100 p-1 fs-5 text-white  light-blue-bg ">Featured</div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-6 p-3 text-secondary fs-7">
+                <i class="fa fa-comment text-dark px-1" aria-hidden="true"></i> 23 comment
+              </div>
+              <div class="col-lg-3 col-md-3 col-6 p-3 text-secondary fs-7">
+                <i class="fa fa-calendar px-1 text-dark" aria-hidden="true"></i> {{1998}}
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-lg-8 col-md-12 col-sm-12 p-3">
+            <h1 class="fs-3 fw-bold mt-3 ">{{productDetail.tile}}</h1>
+            <div class="loc fs-5 fw-semibold mb-5">
+              <i class="fa fa-location-dot px-2 text-danger text-capitalize"
+                aria-hidden="true"></i><span>{{productDetail.city}}</span>
+            </div>
+            <div class="discrp p-2 shadow">
+              <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-4"> Discription</h2>
+              <p class="fs-6 px-4 text-secondary">
+                {{productDetail.description}}
+              </p>
+            </div>
+            <div class="Propertydetial mt-5 p-2 shadow-sm">
+              <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5"> Property Detial</h2>
+              <div class="row m-0">
+
+                <div class="col-lg-6 col-md-6 col-sm">
+                  <div class="row m-0">
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Property Id <span>:</span></p>
                     </div>
-                    </li>
-                
-                    <input type="radio" name="radio-btn" id="img-2" />
-                    <li class="slide-container">
-                        <div class="slide">
-                          <img src="{{productDetail.feature.image.url}}" />
-                        </div>
-                    <div class="nav">
-                      <label for="img-1" class="prev">&#x2039;</label>
-                      <label for="img-3" class="next">&#x203a;</label>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color"> {{productDetail.id}} </p>
                     </div>
-                    </li>
-                
-                    <input type="radio" name="radio-btn" id="img-3" />
-                    <li class="slide-container">
-                        <div class="slide">
-                          <img src="{{productDetail.feature.imageone.url}}" />
-                        </div>
-                    <div class="nav">
-                      <label for="img-2" class="prev">&#x2039;</label>
-                      <label for="img-4" class="next">&#x203a;</label>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Room<span>:</span></p>
                     </div>
-                    </li>
-                
-                    <input type="radio" name="radio-btn" id="img-4" />
-                    <li class="slide-container">
-                        <div class="slide">
-                          <img src="{{productDetail.feature.imagetwo.url}}" />
-                        </div>
-                    <div class="nav">
-                      <label for="img-3" class="prev">&#x2039;</label>
-                      <label for="img-5" class="next">&#x203a;</label>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color">{{productDetail.room}}</p>
                     </div>
-                    </li>
-                
-                    <input type="radio" name="radio-btn" id="img-5" />
-                    <li class="slide-container">
-                        <div class="slide">
-                          <img src="{{productDetail.feature.imagethree.url}}" />
-                        </div>
-                    <div class="nav">
-                      <label for="img-4" class="prev">&#x2039;</label>
-                      <label for="img-6" class="next">&#x203a;</label>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Bedroom <span>:</span></p>
                     </div>
-                    </li>
-                
-                    <input type="radio" name="radio-btn" id="img-6" />
-                    <li class="slide-container">
-                        <div class="slide">
-                          <img src="/assets/img/products/francesca-tosolini-tHkJAMcO3QE-unsplash.jpg" />
-                        </div>
-                    <div class="nav">
-                      <label for="img-5" class="prev">&#x2039;</label>
-                      <label for="img-1" class="next">&#x203a;</label>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color">{{productDetail.bed}} </p>
                     </div>
-                    </li>
-                
-                    <li class="nav-dots">
-                      <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-                      <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-                      <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-                      <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-                      <label for="img-5" class="nav-dot" id="img-dot-5"></label>
-                      <label for="img-6" class="nav-dot" id="img-dot-6"></label>
-                    </li>
-                </ul>
-                </div>
-                <div class="col-12 m-0">
-                  <div class=" sec-m border-top pt-3">
-                      <div class="row m-0">
-                        <div class="col-lg-8 col-md-12 col-sm">
-                            <div class="row text-center m-0">
-                              <div class="col-lg-3 col-md-3 col-6 p-2">
-                                <div class="w-100 p-1 fs-7 text-white  dark-blue-bg fs-5">For Rent</div>
-                              </div>
-                             
-                              <div class="col-lg-3 col-md-3 col-6 p-2">
-                                <div class="w-100 p-1 fs-5 text-white  light-blue-bg ">Featured</div>
-                              </div>
-                             
-                              <div class="col-lg-3 col-md-3 col-6 p-3 text-secondary fs-7">
-                                <i class="fa fa-comment text-dark px-1" aria-hidden="true"></i> 23 comment
-                              </div>
-                               <div class="col-lg-3 col-md-3 col-6 p-3 text-secondary fs-7">
-                                <i class="fa fa-calendar px-1 text-dark" aria-hidden="true"></i> {{productDetail.feature.buildyear}}
-                              </div>
-                             
-                        </div>
-                        
-                      </div>
-                        <div class="col-lg-8 col-md-12 col-sm-12 p-3">
-                            <h1 class="fs-3 fw-bold mt-3 ">{{productDetail.title}}</h1>
-                            <div class="loc fs-5 fw-semibold mb-5">
-                              <i class="fa fa-location-dot px-2 text-danger" aria-hidden="true"></i><span>{{productDetail.location.country}} {{productDetail.location.city}}</span>
-                            </div>
-                          <div class="discrp p-2 shadow">
-                            <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-4"> Discription</h2>
-                            <p class="fs-6 px-4 text-secondary">
-                              {{productDetail.description}}
-                            </p>
-                          </div>
-                          <div class="Propertydetial mt-5 p-2 shadow-sm">
-                            <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5"> Property Detial</h2>
-                            <div class="row m-0">
-
-                              <div class="col-lg-6 col-md-6 col-sm">
-                                <div class="row m-0">
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Property Id <span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> {{productDetail.id}} </p> 
-                                  </div>
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Extra Room<span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.extraroom}}</p> 
-                                  </div>
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Bedroom <span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.bed}} </p> 
-                                  </div>
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Bathroom <span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.bath}}</p> 
-                                  </div>
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Grauge <span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> {{productDetail.feature.garauge}} </p> 
-                                  </div>
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Floor <span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> {{productDetail.feature.floor}} </p> 
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              <div class="col-lg-6 col-md-6 col-sm">
-                                <div class="row m-0">
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Status <span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color">{{productfeature}}</p> 
-                                  </div>
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Building Area<span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color"> {{productDetail.feature.area}} <span>sqrft</span> </p> 
-                                  </div>
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Lot Area<span>:</span></p>
-                                  </div>
-
-                                  
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.lotarea}} <span>sqrft</span></p> 
-                                  </div>
-                                
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Build Year <span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.buildyear}} </p> 
-                                  </div>
-                                  <div class="col-6 p-1">
-                                    <p class="fs-6 fw-semibold text-secondary">Price <span>:</span></p>
-                                  </div>
-                                  <div class="col-6 p-1"> 
-                                    <p class="fs-6 dark-blue-color">{{productDetail.feature.price}}<span> <i class="fa fa-dollar" aria-hidden="true"></i></span></p> 
-                                  </div>
-                              
-                                </div>
-                              </div>
-
-                            </div>
-                          </div>
-                          <div class="Animaties mt-5 p-2 shadow-sm">
-                            <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5 "> Animaties</h2>
-                            <div class="row m-0">
-                              
-                              {% for i in amenites %}
-                              <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="fs-6 fw-semibold p-2 text-secondary">
-                                  <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i> 
-                                  <span>{{i}}</span>
-                                </div>
-                              </div>
-                            {% endfor %}
-                              
-                            </div>
-                        
-
-                          </div>
-                          <div class="Galary my-5 p-2 shadow-sm ">
-                            <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5 "> Galary</h2>
-                            <div class="row m-0">
-                              <div class="col-lg-12 col-md-12 col-sm-12 m-0 p-1">
-                                <img src="{{ productDetail.feature.coverimage.url}}" alt="" class="galary-img ">
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-1">
-                                <img src="{{productDetail.feature.image.url}}" alt="" class="galary-img">
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-1">
-                                <img src="{{productDetail.feature.imageone.url}}" alt="" class="w-100 ">
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-1">
-                                <img src="{{productDetail.feature.imagetwo.url}}" alt="" class="w-100 ">
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-1">
-                                <img src="{{productDetail.feature.imagethree.url}}" alt="" class="w-100 ">
-                              </div>
-                              
-                            </div>
-                          </div>
-                            
-                          <div class="location-map my-5 p-2 shadow-sm">
-                            <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5 "> location</h2>
-                            <div class="row m-0 mt-3">
-                              <div class="col-12">
-                                  <div class="w-100">
-                                    <iframe src="https://www.google.com/maps?q={{productDetail.location.city}}&amp;z=9&amp;output=embed" class="w-100" style="height:20em;" allowfullscreen="allowfullscreen"></iframe>
-                                  </div>
-                              </div>
-                              <div class="col-12">
-                                <div class="row m-0">
-                                    
-                                    <div class="col-12 m-0">
-                                      <label for="distanceform text-dark"> <i class="fa fa-location-dot text-danger" aria-hidden="true"></i> Distance</label>
-                                      <form id="distanceform" class="d-flex  " role="search" action="">
-                                        <input id="distanceinput" class="form-control  me-2 bg-light fs-7 search-input p-1" type="search" placeholder="Location" aria-label="Search">
-                                            
-                                            <button id="distance" class="btn btn-outline-light dark-blue-bg p-1 px-2" type="submit">Search</button> 
-                                      </form>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div class="comment my-5 p-2 shadow-sm">
-                            <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-2 "> Users view</h2>
-                            <div class="star px-4 text-warning mb-5">
-                              <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                              <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                              <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                              <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-                              <i class="fa fa-star star-null " aria-hidden="true"></i>
-                              ( <span>32</span> views )
-                            </div>
-                            <div class="comment-view">
-                              <div class="row m-0">
-                                <div class="col-12">
-                                  <div class="comment-user">
-                                    <img src="/assets/img/team/1.jpg" alt="">
-                                    <h2 class="fs-6 fw-bold dark-blue-color mt-2">
-                                      Tom calany
-                                    </h2>
-                                  <div class="row m-0 p-0 mt-2">
-                                    <div class="col-6 p-0">
-                                      <div class="star px-2 text-warning  fs-7">
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star star-null " aria-hidden="true"></i>
-                                      </div>
-                                    </div>
-                                    <div class="col-6 fs-7 text-end text-secondary">May, 1, 2023</div>
-                                  </div>
-                                    <p class="fs-7 px-2 text-secondary">
-                                      Massa tempor nec feugiat nisl pretium. Egestas fringilla 
-                                      phasellus faucibus scelerisque eleifend donec Porta nibh
-                                      venenatis cras sed felis eget velit aliquet. Neque volutpat
-                                        ac tincidunt vitae semper quis lectus. Turpis in eu mi 
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="col-12">
-                                  <div class="comment-user">
-                                    <img src="/assets/img/team/1.jpg" alt="">
-                                    <h2 class="fs-6 fw-bold dark-blue-color mt-2">
-                                      Tom calany
-                                    </h2>
-                                  <div class="row m-0 p-0 mt-2">
-                                    <div class="col-6 p-0">
-                                      <div class="star px-2 text-warning  fs-7">
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star star-null " aria-hidden="true"></i>
-                                      </div>
-                                    </div>
-                                    <div class="col-6 fs-7 text-end text-secondary">May, 1, 2023</div>
-                                  </div>
-                                    <p class="fs-7 px-2 text-secondary">
-                                      Massa tempor nec feugiat nisl pretium. Egestas fringilla 
-                                      phasellus faucibus scelerisque eleifend donec Porta nibh
-                                      venenatis cras sed felis eget velit aliquet. Neque volutpat
-                                        ac tincidunt vitae semper quis lectus. Turpis in eu mi 
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="col-12">
-                                  <div class="comment-user">
-                                    <img src="/assets/img/team/1.jpg" alt="">
-                                    <h2 class="fs-6 fw-bold dark-blue-color mt-2">
-                                      Tom calany
-                                    </h2>
-                                  <div class="row m-0 p-0 mt-2">
-                                    <div class="col-6 p-0">
-                                      <div class="star px-2 text-warning  fs-7">
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star star-null " aria-hidden="true"></i>
-                                      </div>
-                                    </div>
-                                    <div class="col-6 fs-7 text-end text-secondary">May, 1, 2023</div>
-                                  </div>
-                                    <p class="fs-7 px-2 text-secondary">
-                                      Massa tempor nec feugiat nisl pretium. Egestas fringilla 
-                                      phasellus faucibus scelerisque eleifend donec Porta nibh
-                                      venenatis cras sed felis eget velit aliquet. Neque volutpat
-                                        ac tincidunt vitae semper quis lectus. Turpis in eu mi 
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="col-12">
-                                  <div class="comment-user">
-                                    <img src="/assets/img/team/1.jpg" alt="">
-                                    <h2 class="fs-6 fw-bold dark-blue-color mt-2">
-                                      Tom calany
-                                    </h2>
-                                  <div class="row m-0 p-0 mt-2">
-                                    <div class="col-6 p-0">
-                                      <div class="star px-2 text-warning  fs-7">
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star star-null " aria-hidden="true"></i>
-                                      </div>
-                                    </div>
-                                    <div class="col-6 fs-7 text-end text-secondary">May, 1, 2023</div>
-                                  </div>
-                                    <p class="fs-7 px-2 text-secondary">
-                                      Massa tempor nec feugiat nisl pretium. Egestas fringilla 
-                                      phasellus faucibus scelerisque eleifend donec Porta nibh
-                                      venenatis cras sed felis eget velit aliquet. Neque volutpat
-                                        ac tincidunt vitae semper quis lectus. Turpis in eu mi 
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="col-12">
-                                  <div class="comment-user">
-                                    <img src="/assets/img/team/1.jpg" alt="">
-                                    <h2 class="fs-6 fw-bold dark-blue-color mt-2">
-                                      Tom calany
-                                    </h2>
-                                  <div class="row m-0 p-0 mt-2">
-                                    <div class="col-6 p-0">
-                                      <div class="star px-2 text-warning  fs-7">
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star star-null " aria-hidden="true"></i>
-                                      </div>
-                                    </div>
-                                    <div class="col-6 fs-7 text-end text-secondary">May, 1, 2023</div>
-                                  </div>
-                                    <p class="fs-7 px-2 text-secondary">
-                                      Massa tempor nec feugiat nisl pretium. Egestas fringilla 
-                                      phasellus faucibus scelerisque eleifend donec Porta nibh
-                                      venenatis cras sed felis eget velit aliquet. Neque volutpat
-                                        ac tincidunt vitae semper quis lectus. Turpis in eu mi 
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="col-12">
-                                  <div class="comment-user">
-                                    <img src="/assets/img/team/1.jpg" alt="">
-                                    <h2 class="fs-6 fw-bold dark-blue-color mt-2">
-                                      Tom calany
-                                    </h2>
-                                  <div class="row m-0 p-0 mt-2">
-                                    <div class="col-6 p-0">
-                                      <div class="star px-2 text-warning  fs-7">
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-                                        <i class="fa fa-star star-null " aria-hidden="true"></i>
-                                      </div>
-                                    </div>
-                                    <div class="col-6 fs-7 text-end text-secondary">May, 1, 2023</div>
-                                  </div>
-                                    <p class="fs-7 px-2 text-secondary">
-                                      Massa tempor nec feugiat nisl pretium. Egestas fringilla 
-                                      phasellus faucibus scelerisque eleifend donec Porta nibh
-                                      venenatis cras sed felis eget velit aliquet. Neque volutpat
-                                        ac tincidunt vitae semper quis lectus. Turpis in eu mi 
-                                    </p>
-                                  </div>
-                                </div>
-                          
-                              
-                                
-                              </div>
-                            </div>
-                          </div>
-
-                          
-                          <div class="comment-add my-5 p-2 shadow">
-                            <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-2 "> Add View</h2>
-                            <form class="p-3">
-                              <div class="mb-3">
-                                <label for="comment" class="form-label fw-bold dark-blue-color">Comment:</label>
-                                <textarea id="comment" name="comment" class="form-control" placeholder="Your Comment" rows="4"></textarea>
-                              </div>
-                              <div class="mb-3">
-                                <label for="rating" class="form-label fw-bold dark-blue-color">Rating:</label>
-                                <div class="rating-input">
-                                  <input type="radio" id="star5" name="rating" value="5" onclick="rate(5)">
-                                  <label for="star5"><i class="fa fa-star fs-5" aria-hidden="true"></i> </label>
-                                  <input type="radio" id="star4" name="rating" value="4" onclick="rate(4)">
-                                  <label for="star4"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
-                                  <input type="radio" id="star3" name="rating" value="3" onclick="rate(3)">
-                                  <label for="star3"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
-                                  <input type="radio" id="star2" name="rating" value="2" onclick="rate(2)">
-                                  <label for="star2"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
-                                  <input type="radio" id="star1" name="rating" value="1" onclick="rate(1)">
-                                  <label for="star1"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
-                                </div>
-                              </div>
-                              <button type="submit" class="btn btn-outline-light dark-blue-bg">Submit</button>
-                            </form>
-                          </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                          <div class="Agent-card border-2 p-3 text-center " >
-                            <div class="img-prof">
-                              <div class="image-wrapper">
-                                <img src="/assets/img/team/2.jpg" alt="Your Image">
-                              </div>
-                            </div>  
-                            
-                            <h2 class="fs-5 dark-blue-color fw-bold pb-2">Dr. John Smith</h2>
-                            <h3 class="fs-6 fw-bold pb-0">Real estate agent</h3>
-                            <div class="star m-0 p-0 text-warning  fs-7">
-                              <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                              <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                              <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                              <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-                              <i class="fa fa-star star-null " aria-hidden="true"></i>
-                            </div>
-                              <p class="fs-6 text-secondary px-3 pb-2">
-                                Massa tempor nec feugiat nisl pretium. 
-                                Egestas fringilla phasellus faucibus scelerisque eleifend 
-                              </p>
-                              <div class="row m-0">
-                                <div class="col fs-5 light-blue-cl mb-2">
-                                  <i class="fa fa-phone px-2" aria-hidden="true"></i>
-                                  <i class="fa fa-user px-2" aria-hidden="true"></i>
-                                  <i class="fa fa-envelope px-2" aria-hidden="true"></i>
-                                </div>
-                              </div>
-                        </div>
-                          <div class="Owner-card border-2 p-3 text-center mt-5" >
-                              <div class="img-prof">
-                                <div class="image-wrapper">
-                                  <img src="/assets/img/team/2.jpg" alt="Your Image">
-                                </div>
-                              </div>  
-                              
-                              <h2 class="fs-5 dark-blue-color fw-bold pb-2">Dr. John Smith</h2>
-                              <h3 class="fs-6 fw-bold pb-0">owner</h3>
-                              <div class="star m-0 p-0 text-warning  fs-7">
-                                <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                                <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
-                                <i class="fa fa-star star-null " aria-hidden="true"></i>
-                              </div>
-                                <p class="fs-6 text-secondary px-3 pb-2">
-                                  Massa tempor nec feugiat nisl pretium. 
-                                  Egestas fringilla phasellus faucibus scelerisque eleifend 
-                                </p>
-                                <div class="row m-0">
-                                  <div class="col fs-5 light-blue-cl mb-2">
-                                    <i class="fa fa-phone px-2" aria-hidden="true"></i>
-                                    <i class="fa fa-user px-2" aria-hidden="true"></i>
-                                    <i class="fa fa-envelope px-2" aria-hidden="true"></i>
-                                  </div>
-                                </div> 
-                          </div>
-<!-- Featured Agent -->
-                          <div class="PD-agent-list shadow-sm p-3 mt-5" >
-                            <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5">Featured Agents</h2>
-                              <div class="PD-scroll">
-                                <div class="container p-1 shadow-sm position-relative">
-                                  </div>
-                              </div>
-                            
-                        </div>
-<!--End Featured Agent -->
-
-<!-- Featured Property -->
-
-                        <div class="PD-agent-list shadow-sm p-3 mt-5" >
-                          <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5">Featured Propertyies</h2>
-                            <div class="PD-scroll">
-                              <div class="card w-100 position-relative shadow-lg" >
-                                
-                              </div>
-                            </div>
-                          
-                      </div>
-<!-- End Featured Agent -->
-                        </div>
-                      </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Bathroom <span>:</span></p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color">{{productDetail.bath}}</p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Grauge <span>:</span></p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color"> {{productDetail.grauge}} </p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Floor <span>:</span></p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color"> {{productDetail.floor}} </p>
+                    </div>
                   </div>
                 </div>
+
+                <div class="col-lg-6 col-md-6 col-sm">
+                  <div class="row m-0">
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Status <span>:</span></p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color">{{productDetail.status}}</p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Building Area<span>:</span></p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color"> {{productDetail.area}} <span>sqrft</span> </p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Lot Area<span>:</span></p>
+                    </div>
+
+
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color">{{productDetail.lotarea}} <span>sqrft</span></p>
+                    </div>
+
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Build Year <span>:</span></p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color">{{1998}} </p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 fw-semibold text-secondary">Price <span>:</span></p>
+                    </div>
+                    <div class="col-6 p-1">
+                      <p class="fs-6 dark-blue-color">{{productDetail.price}}<span> <i class="fa fa-dollar"
+                            aria-hidden="true"></i></span></p>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
             </div>
- </div>
- {% include 'base/contact.html' %}
- {% endblock content %}
+            <div class="Animaties mt-5 p-2 shadow-sm">
+              <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5 "> Animaties</h2>
+              <div class="row m-0">
+                <div class="col-xl-6 col-md-12 col-sm-12">
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Air_Conditioning == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Air Conditioning</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Balcony == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Balcony</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Garden_Yard == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Garden Yard {{productDetail.amenities.Garden_Yard}}</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Pool == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Pool</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Security_System == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Security System</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Parking_Space == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="true"></i>
+                    {% endif %}
+                    <span>Parking Space {{productDetail.amenities.Parking_Space}}</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Basement == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Basement</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.BBQ_Area == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>BBQ Area</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Walk_in_Closet == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Walk in Closet</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Central_Heating == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Central Heating</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Deck_Patio == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Deck Patio</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Dishwasher == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Dishwasher</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Fireplace == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Fireplace</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Fitness_Center_Gym == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Fitness Center Gym</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Garage == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Garage</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Hardwood_Floors == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Hardwood Floors</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Laundry_Room == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Laundry Room</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Washer_Dryer_Hookups == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Washer Dryer Hookups</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Wheelchair_Accessible == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Wheelchair Accessible</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Pet_Friendly == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Pet Friendly</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.High_Speed_Internet_Access == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>High Speed Internet Access</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Workshop_Studio_Space == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Workshop Studio Space</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Solar_Panels == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Solar Panels</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Mountain_City_View == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Mountain City View</span>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-md-12 col-sm-12">
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Cable_Satellite_TV == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Cable Satellite TV</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Fully_Furnished == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Fully Furnished</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Gated_Community == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Gated Community</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Tennis_Basketball_Court == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Tennis Basketball Court</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Playground == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Playground</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Elevator == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Elevator</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Waterfront_Access == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Waterfront Access</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Close_to_Public_Transportation == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Close to Public Transportation</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Proximity_to_Schools == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Proximity to Schools</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Nearby_Shopping_Restaurants == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Nearby Shopping Restaurants</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Access_to_Parks_Recreational_Areas == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Access to Parks Recreational Areas</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.On_Site_Maintenance == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>On Site Maintenance</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.On_Site_Management == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>On Site Management</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Hour_Security == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Hour Security</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Energy_Efficient_Appliances == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Energy Efficient Appliances</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Green_Building_Features == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Green Building Features</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Smart_Home_Technology == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Smart Home Technology</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Wine_Cellar == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Wine Cellar</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Home_Theater == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Home Theater</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Office_Study_Room == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Office Study Room</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Guest_House_In_Law_Suite == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Guest House In Law Suite</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Game_Room == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Game Room</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Vaulted_Ceilings == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Vaulted_Ceilings</span>
+                  </div>
+                  <div class="fs-6 fw-semibold p-2 text-secondary">
+                    {% if productDetail.amenities.Skylights == True %}
+                    <i class="fa fa-toggle-on text-info px-2 " aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-toggle-off text-info px-2 " aria-hidden="false"></i>
+                    {% endif %}
+                    <span>Skylights</span>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="Galary my-5 p-2 shadow-sm ">
+              <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5 "> Galary</h2>
+              <div class="row m-0">
+                <div class="col-lg-12 col-md-12 col-sm-12 m-0 p-1">
+                  <img src="{{ productDetail.coverPhoto.url}}" alt="" class="galary-img ">
+                </div>
+                {% for i in imageDetail %}
+                <div class="col-lg-6 col-md-6 col-sm-12 m-0 p-1">
+                  <img src="{{i.image.url}}" alt="" class="galary-img">
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="location-map my-5 p-2 shadow-sm">
+              <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-5 "> location</h2>
+              <div class="row m-0 mt-3">
+                <div class="col-12">
+                  <div class="w-100">
+                    <iframe src="https://www.google.com/maps?q={{productDetail.city}}&amp;z=9&amp;output=embed"
+                      class="w-100" style="height:20em;" allowfullscreen="allowfullscreen"></iframe>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <!-- <div class="row m-0">
+
+                    <div class="col-12 m-0">
+                      <label for="distanceform text-dark"> <i class="fa fa-location-dot text-danger"
+                          aria-hidden="true"></i> Distance</label>
+                      <form id="distanceform" class="d-flex  " role="search" action="">
+                        <input id="distanceinput" class="form-control  me-2 bg-light fs-7 search-input p-1"
+                          type="search" placeholder="Location" aria-label="Search">
+
+                        <button id="distance" class="btn btn-outline-light dark-blue-bg p-1 px-2"
+                          type="submit">Search</button>
+                      </form>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="comment my-5 p-2 shadow-sm">
+              <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-2 "> Users view</h2>
+              <div class="star px-4 text-warning mb-5">
+                {% for i in starCount %}
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                {% endfor %}
+                {% for i in starNullCount %}
+                <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                {% endfor %}
+                ( <span>{{viewNumber}}</span> views )
+              </div>
+              <div class="comment-view">
+                <div class="row m-0">
+
+                  {% for comment in productRate %}
+                  <div class="col-12">
+                    <div class="comment-user">
+                      <img src="{{comment.user.profile_image.url}}" alt="Profile Image">
+                      <h2 class="fs-6 fw-bold dark-blue-color mt-2">
+                        {{comment.user.username}}
+                      </h2>
+                      <div class="row m-0 p-0 mt-2">
+                        <div class="col-6 p-0">
+                          <div class="star px-2 text-warning  fs-7">
+                            {% if comment.rate == 0 %}
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            {% elif comment.rate == 1 %}
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            {% elif comment.rate == 2 %}
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            {% elif comment.rate == 3 %}
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            {% elif comment.rate == 4 %}
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-secondary " aria-hidden="true"></i>
+                            {% else %}
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                            {% endif %}
+                          </div>
+                        </div>
+                        <div class="col-6 fs-7 text-end text-secondary">{{ now }}</div>
+                      </div>
+                      <p class="fs-7 px-2 text-secondary">
+                        {{comment.comment}}
+                      </p>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+
+
+            <div class="comment-add my-5 p-2 shadow">
+              <h2 class="fs-4 fw-bold py-1 px-4 br-left mb-2 "> Add View</h2>
+              <form class="p-3" action="/productCommnets/{{productDetail.id}}" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="comment" class="form-label fw-bold dark-blue-color">Comment:</label>
+                  <textarea id="comment" name="comment" class="form-control" placeholder="Your Comment"
+                    rows="4"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="rating" class="form-label fw-bold dark-blue-color">Rating:</label>
+                  <div class="rating-input">
+                    <input type="radio" id="star5" name="rating1" value="5" onclick="rate(5)">
+                    <label for="star5"><i class="fa fa-star fs-5" aria-hidden="true"></i> </label>
+                    <input type="radio" id="star4" name="rating2" value="4" onclick="rate(4)">
+                    <label for="star4"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
+                    <input type="radio" id="star3" name="rating3" value="3" onclick="rate(3)">
+                    <label for="star3"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
+                    <input type="radio" id="star2" name="rating4" value="2" onclick="rate(2)">
+                    <label for="star2"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
+                    <input type="radio" id="star1" name="rating5" value="1" onclick="rate(1)">
+                    <label for="star1"><i class="fa fa-star fs-5" aria-hidden="true"></i></label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-outline-light dark-blue-bg">Submit</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="Agent-card border-2 p-3 text-center ">
+              <div class="img-prof">
+                <div class="image-wrapper">
+                  <img src="{{productDetail.agent.admin.profile_image.url}}" alt="Your Image">
+                </div>
+              </div>
+
+              <h2 class="fs-5 dark-blue-color fw-bold pb-2">{{productDetail.agent.admin.first_name}}
+                {{productDetail.agent.admin.last_name}}</h2>
+              <h3 class="fs-6 fw-bold pb-0">Real estate agent</h3>
+              <div class="star m-0 p-0 text-warning  fs-7">
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star-half-stroke text-warning " aria-hidden="true"></i>
+                <i class="fa fa-star star-null " aria-hidden="true"></i>
+              </div>
+              <p class="fs-6 text-secondary px-3 pb-2">
+                Massa tempor nec feugiat nisl pretium.
+                Egestas fringilla phasellus faucibus scelerisque eleifend
+              </p>
+              <div class="row m-0">
+                <div class="col fs-5 light-blue-cl mb-2">
+                  <i class="fa fa-phone px-2" aria-hidden="true"></i>
+                  <i class="fa fa-user px-2" aria-hidden="true"></i>
+                  <i class="fa fa-envelope px-2" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include 'base/contact.html' %}
+{% endblock content %}

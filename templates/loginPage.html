@@ -14,22 +14,27 @@
              Login
             </h1>
         </div>
-        <form action="" class="">
+        <form action="{% url 'login' %}" method="post" class="">
+            {% csrf_token %}
         <div class="row m-0">
             <div class="col-12">
                 <span class="d-block mt-2 text-light"><i class="fa fa-user px-1" aria-hidden="true"></i> Email</span>
-                <input class="form-control" type="email" required>
+                <input class="form-control" type="email" name="email" required>
                 <span class="d-block mt-2 text-light"><i class="fa fa-envelope px-1" aria-hidden="true"></i> Password</span>
-                <input class="form-control" type="password" required>
-                
+                <input class="form-control" type="password" name="password" required>
             </div>
         </div>
         <!-- End Login Section-->
         <div class="row m-0">
             <div class="col-12 text-center align-content-center mt-3">
-                <button class="btn btn-outline-info text-light w-25 mt-2 light-blue-bg" type="submit"><a href="{% url 'dashboard' %}" class="nav-link">Login</a></button>
+                <button class="btn btn-outline-info text-light w-25 mt-2 light-blue-bg" type="submit">Login</button>
                 <a href="{% url 'register' %}" class="text-decoration-none text-light d-block mt-2 fs-7">I dont have acount?</span></a>
-                <a href="" class="text-decoration-none text-light fs-7">Forget password</span></a>
+                <a href="" class="text-decoration-none text-light fs-7 d-block">Forget password</span></a>
+                {% for i in messages %}
+                   <span class="badge bg-danger">
+                        {{i}}
+                   </span>
+                {% endfor %}
             </div>
         </div>
     </form>

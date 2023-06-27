@@ -12,17 +12,70 @@
 </div>
 <!-- End Banner-->
 
-<!-- Start SearchArea-->
-
-<div class=" dark-blue-bg p-3 mb-5 dark-blue-bg">
-
-</div>
 <!-- Start PropertyList Body-->
 <div class="divBody mt-2 mb-5">
   <div class="row m-0">
+    {% for i in agents %}
+    <div class="col-lg-3 col-md-4 col-sm-12">
+      <div class="container p-1 shadow-sm position-relative">
+        <img src="{{i.admin.profile_image.url}}" width="100%" alt="">
+        <div class="agent-detial">
+          <div class="row m-0">
+            <div class="col-lg-7 col-md-7 col-6">
+              <div class="container p-0 py-1 fs-7">
+                <h5 class="fs-6 fw-bold m-0">{{i.admin.first_name}} {{i.admin.last_name}}</h5>
+                <div class="content-agent ">
+                  <p class="m-0 pt-1 prog-text-color"> <i class="fa fa-location-dot text-danger"></i>
+                    {{i.location.city}}
+                  </p>
+                  <p class="p-0 mb-0 prog-text-color"><i class="fa fa-user text-black" aria-hidden="true"></i> Broker
+                    Agent</p>
 
+                </div>
+                <div class="p-1 m-0">
+                  <i class="fa fa-star text-warning " aria-hidden="true"></i>
+                  <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                  <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                  <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                  <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-6 p-0">
+              <div class="btn-contact-agent h-100  ">
+                <a href="{% url 'agentpage' i.id %}" class="text-light nav-link fw-bold py-4"> Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% if agents.has_other_pages %}
+    <ul class="pagination justify-content-center">
+      {% if agents.has_previous %}
+      <li class="page-item"><a href="?page={{ agents.previous_page_number }}" class="page-link">&laquo;</a></li>
+      {% else %}
+      <li class="disabled page-item"><a class="page-link">&laquo;</a></li>
+      {% endif %}
+      {% for i in agents.paginator.page_range %}
+      {% if agents.number == i %}
+      <li class="page-item"><a href="" class="page-link">{{i}}</a></li>
+      {% else %}
+      <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+      {% endif %}
+      {% endfor %}
+      {% if agents.has_next %}
+      <li class="page-item"><a href="?page={{ agents.next_page_number }}" class="page-link" aria-label="Next">
+          <span aria-label="true">&raquo;</span>
+        </a></li>
+      {% else %}
+      <li class="disabled page-item"><a class="page-link">&raquo;</a></li>
+      {% endif %}
+    </ul>
+    {% endif %}
   </div>
 </div>
 <!-- End PropertyList Body-->
 {% include 'base/contact.html' %}
-      {% endblock content %}
+{% endblock content %}

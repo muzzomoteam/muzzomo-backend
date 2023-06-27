@@ -68,3 +68,13 @@ nextBtn.addEventListener('click', () => {
     });
   }
 });
+
+function previewImage(event) {
+  var input = event.target;
+  var reader = new FileReader();
+  reader.onload = function(){
+    var img = document.getElementById("imagePreview");
+    img.src = reader.result;
+     };
+  reader.readAsDataURL(input.files[0]);
+          }

@@ -25,26 +25,37 @@
                 <h2>Muzzomo</h2>
             </div>
             <ul class="sidebar-nav">
-                <li class="active">
+                <li class="">
                     <a href="{% url 'dashboard' %}"><i class="fa fa-home"></i>Home</a>
                 </li>
+                {% if user.user_type != 'User' %}
                 <li>
                     <a href="{% url 'dashboardPropertyListing' %}"><i class="fa fa-list"></i>Listing</a>
                 </li>
+                {% endif %}
+                {% if user.user_type == 'Agent' %}
                 <li>
-                    <a href="{% url 'dashboardAddListing' %}"><i class="fa fa-address-book"></i>Add Listing</a>
+                    <a href="{% url 'addlisting' %}"><i class="fa fa-address-book"></i>Add Listing</a>
                 </li>
+                {% endif %}
+                {% if user.user_type == 'User' %}
                 <li>
                     <a href="{% url 'dashboardWishlist' %}"><i class="fa fa-heart"></i>Wishlist</a>
                 </li>
+                {% endif %}
                 <li>
                     <a href="{% url 'dashboardProfile' %}"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
                 </li>
+                {% if user.user_type == 'Agent' %}
                 <li>
                     <a href="{% url 'dashboardMessage' %}"><i class="fa fa-message" aria-hidden="true"></i>Message</a>
                 </li>
+                {% endif %}
                 <li>
-                    <a href="{% url 'login' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Signout</a>
+                    <a href="{% url 'home' %}"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'dologout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Signout</a>
                 </li>
             </ul>
         </aside>

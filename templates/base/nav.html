@@ -48,15 +48,19 @@
                           <li><a class="dropdown-item" href="#">Advertize</a></li>
                         </ul>
                       </li>
+                      {% if user.is_authenticated %}
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dologout' %}">Sign out</a>
+                      </li>
+                      {% else %}
                       <li class="nav-item">
                         <a class="nav-link" href="{% url 'login' %}">Sign in</a>
                       </li>
-                      
+                      {% endif %}
                     </ul>
                   </div>
-                  <a  class="btn btn-outline-light dark-blue-bg btn-add " href="{% url 'addlisting' %}">Add Listing</a>
-                  
-                   
-               
+                  {% if user.is_authenticated %}
+                  <a  class="btn btn-outline-light dark-blue-bg btn-add " href="{% url 'dashboard' %}">Dashboard</a>
+                  {% endif %}
                 </div>
     </nav>
